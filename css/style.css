@@ -1,0 +1,123 @@
+/* Variables CSS */
+:root{
+    /* fond */
+    --color-bg: #0b1220;
+    /*  */
+    --color-surface: #121b2e; 
+    /* texte principal */
+    --color-text: #eaf0ff; 
+    /* texte secondaire */
+    --color-muted:rgba(234, 240, 255, 0.70);
+    --color-accent:#2dffb7;
+    /* accent secondaire */
+    --color-accent-2:#6c63ff;
+    --color-border:rgba(234, 240, 255, 0.12);
+    --radius: 18px;
+    --font-title: "Space Grotesk", system-ui, -apple-system, sans-serif; 
+    --font-body:"Inter", system-ui, -apple-system, sans-serif;
+    --nav-height:76px;
+
+}
+*,*:: ::before,*:: ::after {
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background: radial-gradient(1100px 600px at 20% 10%, rgba(108,99,255,0.18),transparent 60%),radial-gradient(900px 600px at 80% 30%, rgba(45,255,183,0.10),transparent 55%),var(--color-bg);
+
+}
+/* Titres */
+h1,h2,h3,h4,h5{
+    font-family: var(--font-title);
+    letter-spacing: 0.2px;
+}
+/* texte secondaire */
+.text-secondary{
+    color:var(--color-muted);
+}
+/* Liens */
+a{
+    text-decoration: none;
+}
+.link-secondary{
+    color: var(--color-muted);
+}
+.link-secondary:hover{
+    color: var(--color-text);
+}
+main.pt-5{
+    padding-top: calc(var(--nav-height)+20px);
+}
+section{
+    scroll-margin-top: calc(var(--nav-height)+15px);
+}
+
+/* navbar */
+#mainNavbar{
+    min-height: var(--nav-height);
+    background: transparent;
+    transition: background-color 0.25 ease , box-shadow 0.25 ease;
+}
+#mainNavbar .navbar-brand{
+    font-family: var(--font-title);
+}
+#mainNavbar .nav-link{
+    color: rgba(234,240,255,0.85);
+}
+#mainNavbar .nav-link:hover{
+    color:var(--color-accent);
+}
+#mainNavbar .nav-link.active{
+    color: var(--color-text);
+}
+.navbar-scrolled{
+    background: rgba(18,27,46,0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0 ,0 ,0.35);
+}
+.card{
+    background: rgba(18,27,46,0.75);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.card-img-top{
+    height: 200px;
+    object-fit: cover;
+}
+.btn-primary{
+    background-color: var(--color-accent-2);
+    border-color: var(--color-accent-2);
+}
+.btn-success{
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #04110c;
+    font-weight: 700;
+}
+.form-control, .font-select{
+    background-color: rgba(108,99,255,0.18);
+    border: 1px solid rgba(234, 245, 255, 0.18);
+    color: var(--color-text);
+    border-radius: 15px;
+}
+.form-control::placeholder{
+    color: rgba(234, 240, 255, 0.45);
+}
+.form-control:focus, .font-select:focus{
+    border-color: rgba(108,99,255,0.55);
+    box-shadow: 0 0 0 0.2 rgba(110,100,255,0.60);
+}
+footer{
+    background: rgba(18,27,46,0.75);
+}
+@media (max-width: 576px){
+    .card-img-top{
+        height: 180px;
+    }
+    .display-5{
+        font-size: 2.1rem;
+    }
+}
