@@ -18,15 +18,15 @@
     --nav-height:76px;
 
 }
-*,*:: ::before,*:: ::after {
+*,*::before,*::after {
     box-sizing: border-box;
 }
 body{
     margin: 0;
     font-family: var(--font-body);
-    color: var(--color-text);
-    background: radial-gradient(1100px 600px at 20% 10%, rgba(108,99,255,0.18),transparent 60%),radial-gradient(900px 600px at 80% 30%, rgba(45,255,183,0.10),transparent 55%),var(--color-bg);
-
+    color: var(--color-text) !important;
+    background: radial-gradient(1100px 600px at 20% 10%, rgba(108,99,255,0.18), transparent 60%),radial-gradient(900px 600px at 80% 30%, rgba(45,255,183,0.10), transparent 55%),var(--color-bg) !important;
+    background-color: var(--color-bg);
 }
 /* Titres */
 h1,h2,h3,h4,h5{
@@ -120,4 +120,71 @@ footer{
     .display-5{
         font-size: 2.1rem;
     }
+}
+/* Commit 4 */
+/* Section Hero */
+#hero h1{
+    line-height: 1;
+    letter-spacing: -0.5px;
+}
+#hero img{
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 18px 40px rgba(0,0 ,0 ,0.35);
+}
+#hero .bg-dark.border{
+    background: rgba(18,27,46,0.97);
+    border-color: var(--color-border);
+    border-radius: var(--radius);
+}
+/* Bento Grid */
+.bento-grid{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    gap: 14px;
+}
+.bento-card{
+    grid-column: span 6;
+    padding: 18px;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+    background: linear-gradient(180deg, rgba(18,27,46,0.9),rgba(18,27,46,0.75));
+    transition: transform 0.25 ease, box-shadow 0.25 ease,border-color 0.25 ease;
+}
+.bento-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 14px 34px rgba(0,0 ,0 ,0.35);
+    border-color: rgba(108,99,255,0.18);
+}
+.bento-step{
+    font-family: var(--font-title);
+    font-weight: 600;
+    color: rgba(50,255 ,190  ,0.50);
+    margin-bottom: 6px;
+}
+@media (max-width 990px){
+    .bento-card,.bento-card--wide,.bento-card--tall{
+        grid-column: 12px;
+        grid-row: auto;
+    }
+}
+/* Catégorie */
+#categories .card{
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+#categories .card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(0,0 ,0 ,0.35);
+    border-color: var(--color-border);
+
+}
+#categories .card h3 i{
+    color: var(--color-accent);
+}
+/* Témoignages */
+#testimonials .p-4.bg-dark.border{
+    background: rgba(108,99,255,0.18);
+    border-color: var(--color-border);
+    border-radius: var(--radius);
+    color: white;
 }
