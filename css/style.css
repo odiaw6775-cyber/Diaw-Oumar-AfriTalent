@@ -188,3 +188,19 @@ footer{
     border-radius: var(--radius);
     color: white;
 }
+@media (min-width: 768px){
+    .bento-grid{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+    .bento-item-large{
+        grid-column: span 2;
+    }
+}
+@media (max-width: 767px){
+    .bento-grid{
+        display: block;
+    }
+}
