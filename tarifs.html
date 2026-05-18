@@ -1,32 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootsrap.min.css">
+    <title>AfriTalent - Tarifs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap">
-    <!-- Bootstrap 5 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- CSS -->
-     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <!-- Navbar -->
-         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
             <div class="container">
-                <a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil"><i class="bi bi-stars me-1"></i>AfriTalent
+                <a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil">
+                    <i class="bi bi-stars me-1"></i>AfriTalent
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Ouvrir le menu"><span class="navbar-toggler-icon"></span></button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2" >
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
                         <li class="nav-item"><a href="freelances.html" class="nav-link">Freelances</a></li>
                         <li class="nav-item"><a href="tarifs.html" class="nav-link active">Tarifs</a></li>
@@ -37,175 +33,184 @@
                     </ul>
                 </div>
             </div>
-         </nav>
+        </nav>
     </header>
-    <!-- Main -->
+
     <main class="pt-5">
-        <!-- INTRO -->
-         <section class="py-5">
+        <section class="py-5">
             <div class="container py-4">
                 <h1 class="fw-bold">Plans et Tarifications</h1>
-                <p class="text-secondary mb-O">Choississez un plan adapté à votre niveau. Passez à Pro pour accélérer votre recherche de missions et de talents .</p>
+                <p class="mb-0">Choisissez un plan adapté à votre niveau. Passez à Pro pour accélérer votre recherche de missions et de talents.</p>
             </div>
-         </section>
-         <!-- Plan -->
-          <section class="pb-5" aria-label="Plans Tarifaires">
+        </section>
+
+        <section class="pb-5" aria-label="Plans Tarifaires">
             <div class="container">
                 <div class="row g-3 align-items-stretch">
-                    <!-- Plans Gratuits -->
+                    
+                    <!-- Plan Gratuit -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100">
                             <div class="card-body">
                                 <h2 class="h5 card-title">Gratuit</h2>
-                                <p class="text-secondary">Pour découvrir la plateforme</p>
+                                <p>Pour découvrir la plateforme</p>
                                 <p class="display-6 fw-bold mb-0">0 FCFA</p>
-                                <p class="text-secondary mb-4">/mois</p>
+                                <p class="mb-4">/mois</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Création de profil</li>
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Accés au catalogue</li>
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Candidatures limitées</li>
-                                    <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i>Boost de validité</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Création de profil</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accès au catalogue</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Candidatures limitées</li>
+                                    <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i>Boost de visibilité</li>
                                     <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i>Support prioritaire</li>
                                 </ul>
                                 <a href="contact.html" class="btn btn-primary w-100">Commencer</a>
                             </div>
                         </article>
                     </div>
+
                     <!-- Plan Pro -->
-                     <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100 border border-2 border-primary position-relative">
-                            <!-- Badge populaire -->
                             <span class="badge bg-primary position-absolute top-0 start-50 translate-middle px-3 py-2">Populaire</span>
                             <div class="card-body">
                                 <h2 class="h5 card-title">Pro</h2>
-                                <p class="text-secondary">Pour aller plus vite</p>
+                                <p>Pour aller plus vite</p>
                                 <p class="display-6 fw-bold mb-0">9 900 FCFA</p>
-                                <p class="text-secondary mb-4">/ mois</p>
+                                <p class="mb-4">/ mois</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Profil mis en avant</li>
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Accés complet aux catalogues</li>
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Candidatures illimitées</li>
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Boost de visbilité</li>
-                                    <li class="mb-2"><i class="bi bi-chech2-circle text-success me-2"></i>Support prioritaire</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Profil mis en avant</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accès complet au catalogue</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Candidatures illimitées</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Boost de visibilité</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Support prioritaire</li>
                                 </ul>
-                                <a href="contact.html" class="btn btn-primary w-100" aria-label="Choisir le plan Pro">Choisir Pro</a>
+                                <a href="contact.html" class="btn btn-primary w-100">Choisir Pro</a>
                             </div>
                         </article>
-                     </div>
-                     <!-- Plan Entreprise -->
-                      <div class="col-12 col-md-6 col-lg-4">
+                    </div>
+
+                    <!-- Plan Entreprise -->
+                    <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100">
                             <div class="card-body">
-                                <h2 class="h5 card-body">Entreprise</h2>
-                                <p class="text-secondary">Pour équipes et recrutement</p>
+                                <h2 class="h5 card-title">Entreprise</h2>
+                                <p>Pour équipes et recrutement</p>
                                 <p class="display-6 fw-bold mb-0">29 900 FCFA</p>
-                                <p class="text-secondary mb-4">/ mois</p>
+                                <p class="mb-4">/ mois</p>
                                 <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2">Accés multi utilisateurs</i></li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2">Matching avancé</i></li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2">Gestion de projets & missions</i></li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2">Facturation centralisée</i></li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2">Accompagnement dédié</i></li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accès multi-utilisateurs</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Matching avancé</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Gestion de projets & missions</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Facturation centralisée</li>
+                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accompagnement dédié</li>
                                 </ul>
                                 <a href="contact.html" class="btn btn-primary w-100">Contacter l'équipe</a>
                             </div>
                         </article>
-                      </div>
+                    </div>
                 </div>
             </div>
-          </section>
-          <!-- FAQ (Accordion Bootstrap) -->
-           <section class="pb-5" aria-label="Foire aux questions">
+        </section>
+
+        <!-- FAQ -->
+        <section class="pb-5" aria-label="Foire aux questions">
             <div class="container">
                 <h2 class="fw-bold mb-4">FAQ</h2>
                 <div class="accordion" id="faqAccordion">
-                    <!-- Q1 -->
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="q1">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">Est ce que AfriTalent est une vrai plateforme?</button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="false">
+                                Est-ce que AfriTalent est une vraie plateforme ?
+                            </button>
                         </h3>
-                        <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAccordion" >
-                            <div class="accordion-body">Non , c'est juste un projet pour un examen.</div>
+                        <div id="a1" class="accordion-collapse collapse" aria-labelledby="q1" data-bs-parent="#faqAccordion" role="region">
+                            <div class="accordion-body">Non, c'est un projet pédagogique pour un examen.</div>
                         </div>
                     </div>
-                    <!-- Q2 -->
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="q2">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="true" aria-controls="a2">Quel plan choisir si je suis une freelance débutant?</button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false">
+                                Quel plan choisir si je suis un freelance débutant ?
+                            </button>
                         </h3>
-                        <div id="a2" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAccordion" >
-                            <div class="accordion-body">Le plan Gratuit suffit pour débuter. Le plan Pro devient utile si vous voulez plus de visibilité et de candidatures.</div>
+                        <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAccordion" role="region">
+                            <div class="accordion-body">Le plan Gratuit suffit pour débuter. Le plan Pro devient utile pour plus de visibilité.</div>
                         </div>
                     </div>
-                    <!-- Q3 -->
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="q3">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="true" aria-controls="a3">Le paiement est-il sécurisé?</button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false">
+                                Le paiement est-il sécurisé ?
+                            </button>
                         </h3>
-                        <div id="a3" class="accordion-collapse collapse show" aria-labelledby="q3" data-bs-parent="#faqAccordion" >
-                            <div class="accordion-body">Dans ce projet, il n'ya pas de paiement réel. L'idée est de présenter une plateforme crédible via un site vitrine</div>
+                        <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAccordion" role="region">
+                            <div class="accordion-body">Dans ce projet, il n'y a pas de paiement réel. C'est un site vitrine.</div>
                         </div>
                     </div>
-                    <!-- Q4 -->
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="q4">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="true" aria-controls="a4">Puis je changer de plan à tout moment ?</button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="false">
+                                Puis-je changer de plan à tout moment ?
+                            </button>
                         </h3>
-                        <div id="a4" class="accordion-collapse collapse show" aria-labelledby="q4" data-bs-parent="#faqAccordion" >
-                            <div class="accordion-body">Oui, c'est le principe d'un abonnement. Dans un vrai produit, un utilisateur pourrait upgrader/downgrader selon ses besoins .</div>
+                        <div id="a4" class="accordion-collapse collapse" aria-labelledby="q4" data-bs-parent="#faqAccordion" role="region">
+                            <div class="accordion-body">Oui, c'est le principe d'un abonnement.</div>
                         </div>
                     </div>
-                    <!-- Q5 -->
                     <div class="accordion-item">
                         <h3 class="accordion-header" id="q5">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a5" aria-expanded="true" aria-controls="a5">Comment sont vérifiées les freelances ?</button>
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5" aria-expanded="false">
+                                Comment sont vérifiées les freelances ?
+                            </button>
                         </h3>
-                        <div id="a5" class="accordion-collapse collapse show" aria-labelledby="q5" data-bs-parent="#faqAccordion" >
-                            <div class="accordion-body">Exemple de processus:portfolio, entretien rapide, et validation de compétences.Ici, c'est présenté de manière fictive .</div>
+                        <div id="a5" class="accordion-collapse collapse" aria-labelledby="q5" data-bs-parent="#faqAccordion" role="region">
+                            <div class="accordion-body">Processus fictif : portfolio, entretien rapide, validation des compétences.</div>
                         </div>
                     </div>
                 </div>
             </div>
-           </section>
-    </main>   
+        </section>
+    </main>
+
     <footer class="py-5 border-top">
         <div class="container">
             <div class="row g-4">
                 <div class="col-12 col-lg-4">
                     <p class="fw-bold mb-2"><i class="bi bi-stars me-1"></i>AfriTalent</p>
-                    <p class="text-secondary mb-0">Plateforme fictive de mise en relation entre freelances tech et entreprises .</p>
+                    <p>Plateforme fictive de mise en relation entre freelances tech et entreprises.</p>
                 </div>
                 <div class="col-6 col-lg-3">
                     <p class="fw-semibold mb-2">Liens utiles</p>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="freelances.html" class="link-secondary">Freelances</a></li>
-                        <li><a href="about.html" class="link-secondary">A propos</a></li>
-                        <li><a href="contact.html" class="link-secondary">Contact</a></li>
+                        <li><a href="freelances.html">Freelances</a></li>
+                        <li><a href="about.html">A propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-3">
                     <p class="fw-semibold mb-2">Ressources</p>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#" class="link-secondary" aria-label="Blog">Blog</a></li>
-                        <li><a href="contact.html" class="link-secondary">Support</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html">Support</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-3">
                     <p class="fw-semibold mb-2">Contact</p>
-                    <p class="text-secondary mb-2">contact@talent-afritalent.africa</p>
+                    <p>contact@afritalent.africa</p>
                     <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers X"><i class="bi bi-x"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="X"><i class="bi bi-x"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-            <p class="text-secondary mt-4 mb-0">&copy; <span id="year">2026</span>AfriTalent . Tous droits réservés .</p>
+            <div class="text-center mt-4 pt-3 border-top">
+                <p class="mb-0">&copy; <span id="year">2026</span> AfriTalent. Tous droits réservés.</p>
+            </div>
         </div>
-    </footer> 
-    <!-- Bootsrap 5 -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-     <!-- JS -->
-      <script src="js/main.js"></script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

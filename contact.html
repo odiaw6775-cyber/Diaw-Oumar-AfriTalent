@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootsrap.min.css">
+    <title>AfriTalent - Contact</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap">
-     <!-- Bootstrap 5 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- CSS -->
-     <link rel="stylesheet" href="css/style.css">
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <!-- NAVBAR -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
             <div class="container">
-                <a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil AfriTalent"><i class="bi bi-stars me-1"></i>AfriTalent</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Ouvrir le menu"><span class="navbar-toggler-icon"></span></button>
+                <a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil">
+                    <i class="bi bi-stars me-1"></i>AfriTalent
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Ouvrir le menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
@@ -38,141 +38,181 @@
             </div>
         </nav>
     </header>
+
     <main class="pt-5">
         <!-- INTRO -->
         <section class="py-5">
-            <div class="container py-4">
-                <h1 class="fw-bold">Contact</h1>
-                <p class="text-secondary mb-0">Une question, une demande de mission ou de partenariat, écrivez nous via le formulaire ci dessous . </p>
+            <div class="container py-4 text-center">
+                <h1 class="fw-bold">Contactez-nous</h1>
+                <p class="mb-0">Une question ? Un projet ? Écrivez-nous, nous vous répondrons rapidement.</p>
             </div>
         </section>
-        <!-- FORMULAIRE + INFO -->
-         <section class="pb-5" aria-label="Formulaire de contact"">
-            <div class="">
-                <div class="row g-4">
-                    <!-- Formulaire -->
-                    <div class="col-12 col-lg-7">
-                        <div class="p-4 rounded-4 bg-dark border">
-                            <h2 class="h4 fw-bold mb-3">Envoyer un message</h2>
-                             <!-- Zone de succés -->
-                              <div class="alert alert-success d-none" id="formSuccess" role="alert">Votre message a bien été enregistré. Nous vous répondrons bientôt .</div>
-                              <form action="" id="contactForm" novalidate>
-                                <div class="row g-3">
-                                    <!-- Nom -->
-                                    <div class="col-12 col-md-6">
-                                        <label for="lastName" class="form-label fw-semibold">Nom</label>
-                                        <input type="text" class="form-control" id="lastName" name="lastName" required aria-describedby="lastNameError" placeholder="Ex: Diaw"/>
-                                        <small id="lastNameError" class="text-danger d-block mt-1"></small>
-                                    </div>
-                                    <!-- Prénom -->
-                                     <div class="col-12 col-md-6">
-                                        <label for="firstName" class="form-label fw-semibold">Prénom</label>
-                                        <input type="text" class="form-control" id="firstName" name="firstName" required aria-describedby="firstNameError" placeholder="Ex : Oumar">
-                                        <small id="firstNameError" class="text-danger d-block mt-1"></small>
-                                    </div>
-                                    <!-- Email -->
-                                     <div class="col-12">
-                                        <label for="email" class="form-label fw-semibold">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" required aria-describedby="emailError" placeholder="Ex : exemple@gmail.com" autocomplete="email">
-                                        <small id="emailError" class="text-danger d-block mt-1"></small>
-                                    </div>
-                                    <!-- Sujet -->
-                                     <div class="col-12">
-                                        <label for="subject" class="form-label fw-semibold">Sujet</label>
-                                        <select name="subject" required id="subject" class="form-select" aria-describedby="subjectError">
-                                            <option value="" selected disabled>Choisissez un sujet</option>
-                                            <option value="mission">Je cherche une mission</option>
-                                            <option value="freelance">Je cherche une freelance</option>
-                                            <option value="partenariat">Partenariat</option>
-                                            <option value="support">Question / Support</option>
-                                        </select>
-                                        <small id="subjectError" class="text-danger d-block mt-1"></small>
-                                    </div>
-                                    <!-- Message -->
-                                     <div class="col-12">
-                                        <label for="message" class="form-label fw-semibold">Message</label>
-                                        <textarea name="message" id="message" class="form-control" rows="6" required aria-describedby="messageError" placeholder="Ecrivez votre message (minimum 20 caractères)..."></textarea>
-                                        <small id="messageError" class="text-danger d-block mt-1"></small>
-                                    </div>
-                                    <!-- Bouton -->
-                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100" type="submit" aria-label="Envoyer le message"><i class="bi bi-send me-1"></i>Envoyer</button>
-                                        
-                                    </div>
 
+        <!-- FORMULAIRE + INFOS CONTACT -->
+        <section class="pb-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Colonne gauche : Formulaire -->
+                    <div class="col-12 col-lg-7">
+                        <div class="card p-4">
+                            <h2 class="h4 mb-4">Envoyez-nous un message</h2>
+                            
+                            <form id="contactForm">
+                                <div class="row g-3">
+                                    <div class="col-12 col-md-6">
+                                        <label for="prenom" class="form-label">Prénom *</label>
+                                        <input type="text" class="form-control" id="prenom" name="prenom" placeholder="Votre prénom">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="nom" class="form-label">Nom *</label>
+                                        <input type="text" class="form-control" id="nom" name="nom" placeholder="Votre nom">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Email *</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="votre@email.com">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="sujet" class="form-label">Sujet *</label>
+                                        <select class="form-select" id="sujet" name="sujet">
+                                            <option value="">Sélectionnez un sujet</option>
+                                            <option value="freelance">Devenir freelance</option>
+                                            <option value="entreprise">Recruter un freelance</option>
+                                            <option value="partenariat">Partenariat</option>
+                                            <option value="autre">Autre demande</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message *</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" placeholder="Votre message (minimum 20 caractères)"></textarea>
+                                    </div>
+                                    
+                                    <!-- Zone du message de succès/erreur -->
+                                    <div class="col-12">
+                                        <div id="formMessage" class="alert d-none" role="alert"></div>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary w-100">
+                                            <i class="bi bi-send me-2"></i>Envoyer le message
+                                        </button>
+                                    </div>
                                 </div>
-                              </form>
+                            </form>
                         </div>
                     </div>
-                    <!-- Infos de contact -->
-                     <aside class="col-12 col-lg-5" aria-label="Informations de contact">
-                        <div class="p-4 rounded-4 bg-dark border h-100">
-                            <h2 class="h4 fw-bold mb-3">Nos coordonnées</h2>
-                            <ul class="list-unstyled mb-4">
-                                <li class="mb-2"><i class="bi bi-envelope me-2"></i><span class="text-secondary">contact@talent-afritalent.africa</span></li>
-                                <li class="mb-2"><i class="bi bi-telephone me-2"></i><span class="text-secondary">+221 77 123 45 67</span></li>
-                                <li class="mb-2"><i class="bi bi-geo-alt me-2"></i><span class="text-secondary">Paris, FRANCE</span></li>
+
+                    <!-- Colonne droite : Infos contact -->
+                    <div class="col-12 col-lg-5">
+                        <div class="card p-4">
+                            <h2 class="h4 mb-4">Nos coordonnées</h2>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="bi bi-geo-alt-fill fs-5 me-3"></i>
+                                    <strong>Adresse :</strong><br>
+                                    <span>École Unité 17, Dakar, Sénégal</span>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-telephone-fill fs-5 me-3"></i>
+                                    <strong>Téléphone :</strong><br>
+                                    <span>+221 33 123 45 67</span>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-envelope-fill fs-5 me-3"></i>
+                                    <strong>Email :</strong><br>
+                                    <span>contact@afritalent.sn</span>
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-clock-fill fs-5 me-3"></i>
+                                    <strong>Horaires :</strong><br>
+                                    <span>Lundi - Vendredi : 9h - 18h</span><br>
+                                    <span>Samedi : 10h - 14h</span>
+                                </li>
                             </ul>
-                            <h3 class="h5 fw-semibold mb-3">Nous suivre</h3>
-                            <div>
-                                <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers Facebook"><i class="bi bi-facebook"></i></a>
-                                <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers Twitter"><i class="bi bi-twitter-x"></i></a>
-                                <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers LinkedIn"><i class="bi bi-linkedin"></i></a>
-                            </div>
-                            <h3 class="h5 fw-semibold mb-3">Localisation</h3>
-                            <div class="ratio ratio-16x9 rounded-4 overflow-hidden border">
-                                <!-- Google Maps iframe -->
-                                <iframe src="https://www.google.com/maps/place/Paris,+France/@48.8589634,2.1822218,11z/data=!3m1!4b1!4m6!3m5!1s0x47e66e1f06e2b70f:0x40b82c3688c9460!8m2!3d48.8575475!4d2.3513765!16zL20vMDVxdGo?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D" frameborder="0" title="Carte Google Maps - Paris" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <hr>
+                            <div class="mt-2">
+                                <p class="mb-2 fw-semibold">Suivez-nous</p>
+                                <div class="d-flex gap-2">
+                                    <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="X"><i class="bi bi-x"></i></a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                                </div>
                             </div>
                         </div>
-                     </aside>
+                    </div>
                 </div>
             </div>
-         </section>
+        </section>
+
+        <!-- CARTE DE LOCALISATION -->
+        <section class="py-5" id="localisation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-4">
+                        <h2 class="fw-bold">Nous trouver</h2>
+                        <p>École Unité 17 - Dakar, Sénégal</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-10">
+                        <div class="rounded-4 overflow-hidden shadow">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61769.26777062448!2d-17.482143253313208!3d14.693742627655552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec10d1a2e3fffff%3A0xb88f93d2281b4df4!2sEcole%20Unit%C3%A9%2017!8e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr" 
+                                 
+                                height="400" 
+                                style="border:0;width:100%;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="Carte de localisation - École Unité 17">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
     <!-- Footer -->
-     <footer class="py-5 border-top">
+    <footer class="py-5 border-top">
         <div class="container">
             <div class="row g-4">
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-4">
                     <p class="fw-bold mb-2"><i class="bi bi-stars me-1"></i>AfriTalent</p>
-                    <p class="text-secndary mb-0">Plateforme fictive de mise en relation entre freelances tech et entreprises. </p>
+                    <p>Plateforme fictive de mise en relation entre freelances tech et entreprises en Afrique.</p>
                 </div>
                 <div class="col-6 col-lg-3">
                     <p class="fw-semibold mb-2">Liens utiles</p>
                     <ul class="list-unstyled mb-0">
-                        <li><a class="link-secondary" href="index.html">Accueil</a></li>
-                        <li><a class="link-secondary" href="freelances.html">Freelances</a></li>
-                        <li><a class="link-secondary" href="tarifs.html">Tarifs</a></li>
+                        <li><a href="freelances.html">Freelances</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="about.html">A propos</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-3">
                     <p class="fw-semibold mb-2">Ressources</p>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#" class="link-secondary" aria-label="Blog">Blog</a></li>
-                        <li><a href="contact.html" class="link-secondary">Support</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html">Support</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-3">
                     <p class="fw-semibold mb-2">Contact</p>
-                    <p class="text-secondary mb-2">contact@talent-afritalent.africa</p>
+                    <p>contact@afritalent.sn</p>
                     <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="X"><i class="bi bi-x"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-            <p class="text-secondary mt-4 mb-0">
-                &copy; <span id="year">2026</span>AfriTalent. Tous droits réservés .
-            </p>
+            <div class="text-center mt-4 pt-3 border-top">
+                <p class="mb-0">&copy; <span id="year">2026</span> AfriTalent. Tous droits réservés.</p>
+            </div>
         </div>
-     </footer>
-     <!-- Bootsrap 5 -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-        
-     </script>
-     <!-- JS -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

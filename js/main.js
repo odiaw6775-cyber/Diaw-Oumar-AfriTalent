@@ -197,6 +197,7 @@ const initFilters = () => {
 
 
 // 7. VALIDATION FORMULAIRE DE CONTACT
+
 const initContactForm = () => {
     const form = document.getElementById('contactForm');
     if (!form) return;
@@ -205,8 +206,14 @@ const initContactForm = () => {
         e.preventDefault();
         
         let isValid = true;
+        const formMessage = document.getElementById('formMessage');
         
-        // Vérifier chaque champ
+        // Réinitialiser le message
+        if (formMessage) {
+            formMessage.classList.add('d-none');
+        }
+        
+        // Récupérer les champs
         const nom = document.getElementById('nom');
         const prenom = document.getElementById('prenom');
         const email = document.getElementById('email');
@@ -231,8 +238,11 @@ const initContactForm = () => {
         
         // Validation Email (regex)
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email.value.trim() || !emailRegex.test(email.value)) {
-            showError(email, 'Email valide requis');
+        if (!email.value.trim()) {
+            showError(email, 'L\'email est requis');
+            isValid = false;
+        } else if (!emailRegex.test(email.value)) {
+            showError(email, 'Format email invalide');
             isValid = false;
         } else {
             clearError(email);
@@ -246,27 +256,35 @@ const initContactForm = () => {
             clearError(sujet);
         }
         
-        // Validation Message (20 caractères minimum)
-        if (!message.value.trim() || message.value.trim().length < 20) {
+        // Validation Message (20 caractères)
+        if (!message.value.trim()) {
+            showError(message, 'Le message est requis');
+            isValid = false;
+        } else if (message.value.trim().length < 20) {
             showError(message, 'Le message doit contenir au moins 20 caractères');
             isValid = false;
         } else {
             clearError(message);
         }
         
-        // Affichage du message de succès
+        // Afficher le message final
         if (isValid) {
-            const successMsg = document.getElementById('successMessage');
-            if (successMsg) {
-                successMsg.style.display = 'block';
-                successMsg.textContent = '✅ Message envoyé avec succès ! Nous vous répondrons rapidement.';
-            }
+            formMessage.classList.remove('d-none', 'alert-danger');
+            formMessage.classList.add('alert-success');
+            formMessage.textContent = '✅ Message envoyé avec succès ! Nous vous répondrons rapidement.';
             form.reset();
+            
+            setTimeout(() => {
+                formMessage.classList.add('d-none');
+            }, 5000);
+        } else {
+            formMessage.classList.remove('d-none', 'alert-success');
+            formMessage.classList.add('alert-danger');
+            formMessage.textContent = '❌ Veuillez corriger les erreurs ci-dessus.';
         }
     });
 };
 
-// Fonctions helpers pour les erreurs
 function showError(input, message) {
     input.classList.add('is-invalid');
     let errorDiv = input.nextElementSibling;
@@ -276,6 +294,14 @@ function showError(input, message) {
         input.parentNode.insertBefore(errorDiv, input.nextSibling);
     }
     errorDiv.textContent = message;
+}
+
+function clearError(input) {
+    input.classList.remove('is-invalid');
+    const errorDiv = input.nextElementSibling;
+    if (errorDiv && errorDiv.classList.contains('invalid-feedback')) {
+        errorDiv.textContent = '';
+    }
 }
 
 function clearError(input) {

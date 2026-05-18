@@ -1,209 +1,268 @@
-/* Variables CSS */
-:root{
-    /* fond */
+/* ==================== VARIABLES CSS ==================== */
+:root {
+    /* Mode sombre */
     --color-bg: #0b1220;
-    /*  */
-    --color-surface: #121b2e; 
-    /* texte principal */
-    --color-text: #eaf0ff; 
-    /* texte secondaire */
-    --color-muted:rgba(234, 240, 255, 0.70);
-    --color-accent:#2dffb7;
-    /* accent secondaire */
-    --color-accent-2:#6c63ff;
-    --color-border:rgba(234, 240, 255, 0.12);
+    --color-surface: #121b2e;
+    --color-text: #eaf0ff;
+    --color-muted: rgba(234, 240, 255, 0.70);
+    --color-accent: #2dffb7;
+    --color-accent-2: #6c63ff;
+    --color-border: rgba(234, 240, 255, 0.12);
+    
+    /* Tailles et polices */
     --radius: 18px;
-    --font-title: "Space Grotesk", system-ui, -apple-system, sans-serif; 
-    --font-body:"Inter", system-ui, -apple-system, sans-serif;
-    --nav-height:76px;
-
+    --font-title: "Space Grotesk", system-ui, -apple-system, sans-serif;
+    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    --nav-height: 76px;
 }
-*,*::before,*::after {
+
+/* ==================== RESET ==================== */
+*, *::before, *::after {
     box-sizing: border-box;
 }
-body{
+
+/* ==================== MODE CLAIR (DÉFAUT) ==================== */
+body {
     margin: 0;
     font-family: var(--font-body);
-    color: var(--color-text) !important;
-    background: radial-gradient(1100px 600px at 20% 10%, rgba(108,99,255,0.18), transparent 60%),radial-gradient(900px 600px at 80% 30%, rgba(45,255,183,0.10), transparent 55%),var(--color-bg) !important;
-    background-color: var(--color-bg);
+    color: #000000 !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
 }
-/* Titres */
-h1,h2,h3,h4,h5{
+
+/* Titres en noir */
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-title);
     letter-spacing: 0.2px;
+    color: #000000 !important;
 }
-/* texte secondaire */
-.text-secondary{
-    color:var(--color-muted);
+
+/* Textes en noir */
+p, span, li, label, div, section, article {
+    color: #000000 !important;
 }
-/* Liens */
-a{
+
+/* Texte secondaire en gris foncé */
+.text-secondary {
+    color: #4a4a4a !important;
+}
+
+/* Liens en noir */
+a:not(.btn):not(.nav-link) {
+    color: #000000 !important;
     text-decoration: none;
 }
-.link-secondary{
-    color: var(--color-muted);
-}
-.link-secondary:hover{
-    color: var(--color-text);
-}
-main.pt-5{
-    padding-top: calc(var(--nav-height)+20px);
-}
-section{
-    scroll-margin-top: calc(var(--nav-height)+15px);
+
+a:not(.btn):not(.nav-link):hover {
+    color: var(--color-accent-2) !important;
 }
 
-/* navbar */
-#mainNavbar{
-    min-height: var(--nav-height);
-    background: transparent;
-    transition: background-color 0.25s ease, box-shadow 0.25s ease; 
+/* ==================== CARTES EN MODE CLAIR ==================== */
+.card, .bento-card, .freelancer-card {
+    background: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    border-radius: var(--radius);
 }
-#mainNavbar .navbar-brand{
+
+.card *,
+.bento-card *,
+.freelancer-card *,
+.card .card-title,
+.card .card-text,
+.card h2, .card h3, .card h4, .card h5,
+.card p, .card span, .card li,
+.freelancer-card p, .freelancer-card span, .freelancer-card li {
+    color: #000000 !important;
+}
+
+/* Prix en noir */
+.display-6, .price, .card .display-6 {
+    color: #000000 !important;
+}
+
+/* Badge populaire */
+.badge.bg-primary {
+    color: #ffffff !important;
+}
+
+/* Icônes dans les cartes */
+.card .text-success, .freelancer-card .text-success {
+    color: #198754 !important;
+}
+
+.card .text-danger, .freelancer-card .text-danger {
+    color: #dc3545 !important;
+}
+
+/* ==================== NAVBAR MODE CLAIR ==================== */
+#mainNavbar {
+    min-height: var(--nav-height);
+    background: #ffffff !important;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+#mainNavbar .navbar-brand,
+#mainNavbar .nav-link {
+    color: #000000 !important;
     font-family: var(--font-title);
 }
-#mainNavbar .nav-link{
-    color: rgba(234,240,255,0.85);
-}
-#mainNavbar .nav-link:hover{
-    color:var(--color-accent);
-}
-#mainNavbar .nav-link.active{
-    color: var(--color-text);
+
+#mainNavbar .nav-link:hover {
+    color: var(--color-accent-2) !important;
 }
 
+#mainNavbar .nav-link.active {
+    color: var(--color-accent-2) !important;
+    font-weight: bold;
+}
 
-.card{
-    background: rgba(18,27,46,0.75);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    overflow: hidden;
+/* ==================== FOOTER MODE CLAIR ==================== */
+footer {
+    background: #f8f9fa !important;
+    border-top: 1px solid #dee2e6 !important;
 }
-.card-img-top{
-    height: 200px;
-    object-fit: cover;
+
+footer p, footer a, footer span {
+    color: #000000 !important;
 }
-.btn-primary{
-    background-color: var(--color-accent-2);
-    border-color: var(--color-accent-2);
+
+footer .text-secondary {
+    color: #4a4a4a !important;
 }
-.btn-success{
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #04110c;
-    font-weight: 700;
-}
-.form-control, .font-select{
-    background-color: rgba(108,99,255,0.18);
-    border: 1px solid rgba(234, 245, 255, 0.18);
-    color: var(--color-text);
+
+/* ==================== FORMULAIRES MODE CLAIR ==================== */
+.form-control, .form-select {
+    background-color: #ffffff !important;
+    border: 1px solid #ced4da !important;
+    color: #000000 !important;
     border-radius: 15px;
 }
-.form-control::placeholder{
-    color: rgba(234, 240, 255, 0.45);
-}
-.form-control:focus, .font-select:focus{
-    border-color: rgba(108,99,255,0.55);
-    box-shadow: 0 0 0 0.2 rgba(110,100,255,0.60);
-}
-footer{
-    background: rgba(18,27,46,0.75);
-}
-@media (max-width: 576px){
-    .card-img-top{
-        height: 180px;
-    }
-    .display-5{
-        font-size: 2.1rem;
-    }
-}
-/* Commit 4 */
-/* Section Hero */
-#hero h1{
-    line-height: 1;
-    letter-spacing: -0.5px;
-}
-#hero img{
-    border-radius: var(--radius);
-    border: 1px solid var(--color-border);
-    box-shadow: 0 18px 40px rgba(0,0 ,0 ,0.35);
-}
-#hero .bg-dark.border{
-    background: rgba(18,27,46,0.97);
-    border-color: var(--color-border);
-    border-radius: var(--radius);
-}
-/* Bento Grid */
-.bento-grid{
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    gap: 14px;
-}
-.bento-card{
-    grid-column: span 6;
-    padding: 18px;
-    border-radius: var(--radius);
-    border: 1px solid var(--color-border);
-    background: linear-gradient(180deg, rgba(18,27,46,0.9),rgba(18,27,46,0.75));
-    transition: transform 0.25 ease, box-shadow 0.25 ease,border-color 0.25 ease;
-}
-.bento-card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 14px 34px rgba(0,0 ,0 ,0.35);
-    border-color: rgba(108,99,255,0.18);
-}
-.bento-step{
-    font-family: var(--font-title);
-    font-weight: 600;
-    color: rgba(50,255 ,190  ,0.50);
-    margin-bottom: 6px;
-}
-@media (max-width: 990px){
-    .bento-card{
-        grid-column: span 12; 
-        grid-row: auto;
-    }
-    .bento-card--wide{
-        grid-column: span 8;
-    }
-    .bento-card--tall {
-    grid-row: span 2;
-    grid-column: span 4;
-    }
-     
-}
-/* Catégorie */
-#categories .card{
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-#categories .card:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 16px 36px rgba(0,0 ,0 ,0.35);
-    border-color: var(--color-border);
 
+.form-control::placeholder {
+    color: #6c757d !important;
 }
-#categories .card h3 i{
-    color: var(--color-accent);
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--color-accent-2);
+    box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
 }
-/* Témoignages */
-#testimonials .p-4.bg-dark.border{
-    background: rgba(108,99,255,0.18);
-    border-color: var(--color-border);
-    border-radius: var(--radius);
+
+/* ==================== BOUTONS MODE CLAIR ==================== */
+.btn-outline-secondary {
+    border-color: #4a4a4a;
+    color: #000000;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--color-accent-2);
+    border-color: var(--color-accent-2);
     color: white;
 }
-/* Navbar au scroll */
-/* ==================== COMMIT 6 ==================== */
 
-/* Navbar au scroll */
+/* ==================== MISE EN PAGE GÉNÉRALE ==================== */
+main.pt-5 {
+    padding-top: calc(var(--nav-height) + 20px);
+}
+
+section {
+    scroll-margin-top: calc(var(--nav-height) + 15px);
+}
+
+/* ==================== MODE SOMBRE ==================== */
+body.dark-mode {
+    color: var(--color-text) !important;
+    background: radial-gradient(1100px 600px at 20% 10%, rgba(108,99,255,0.18), transparent 60%),
+                radial-gradient(900px 600px at 80% 30%, rgba(45,255,183,0.10), transparent 55%),
+                var(--color-bg) !important;
+    background-color: var(--color-bg) !important;
+}
+
+/* Titres mode sombre */
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
+body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
+    color: var(--color-text) !important;
+}
+
+/* Textes mode sombre */
+body.dark-mode p, body.dark-mode span, body.dark-mode li,
+body.dark-mode label, body.dark-mode div {
+    color: var(--color-text) !important;
+}
+
+body.dark-mode .text-secondary {
+    color: var(--color-muted) !important;
+}
+
+/* Cartes mode sombre */
+body.dark-mode .card,
+body.dark-mode .bento-card,
+body.dark-mode .freelancer-card {
+    background: rgba(18, 27, 46, 0.75) !important;
+    border: 1px solid var(--color-border) !important;
+}
+
+body.dark-mode .card *,
+body.dark-mode .bento-card *,
+body.dark-mode .freelancer-card * {
+    color: var(--color-text) !important;
+}
+
+body.dark-mode .display-6,
+body.dark-mode .price {
+    color: var(--color-text) !important;
+}
+
+/* Navbar mode sombre */
+body.dark-mode #mainNavbar {
+    background: transparent !important;
+    box-shadow: none;
+}
+
+body.dark-mode #mainNavbar .navbar-brand,
+body.dark-mode #mainNavbar .nav-link {
+    color: rgba(234, 240, 255, 0.85) !important;
+}
+
+body.dark-mode #mainNavbar .nav-link:hover {
+    color: var(--color-accent) !important;
+}
+
+/* Footer mode sombre */
+body.dark-mode footer {
+    background: rgba(18, 27, 46, 0.75) !important;
+    border-top-color: var(--color-border) !important;
+}
+
+body.dark-mode footer p, body.dark-mode footer a {
+    color: var(--color-text) !important;
+}
+
+/* Formulaires mode sombre */
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: rgba(108, 99, 255, 0.18) !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-text) !important;
+}
+
+/* Boutons mode sombre */
+body.dark-mode .btn-outline-secondary {
+    border-color: #f39c12;
+    color: #f39c12;
+}
+
+/* ==================== NAVBAR SCROLL ==================== */
 .navbar-scrolled {
     background-color: rgba(0, 0, 0, 0.95) !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
 }
 
-/* Bouton Retour en haut */
+body.dark-mode .navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+}
+
+/* ==================== BOUTON RETOUR EN HAUT ==================== */
 #backToTop {
     position: fixed;
     bottom: 30px;
@@ -211,7 +270,7 @@ footer{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: #0d6efd;
+    background-color: var(--color-accent-2);
     color: white;
     border: none;
     opacity: 0;
@@ -222,7 +281,7 @@ footer{
 }
 
 #backToTop:hover {
-    background-color: #0b5ed7;
+    background-color: #5a55d4;
     transform: scale(1.05);
 }
 
@@ -231,48 +290,48 @@ footer{
     visibility: visible;
 }
 
-/* Dark Mode CSS */
-body.dark-mode {
-    background: #121212 !important;
-    background-color: #121212 !important;
-    color: #e0e0e0;
+/* ==================== SECTION HERO ==================== */
+#hero h1 {
+    line-height: 1;
+    letter-spacing: -0.5px;
 }
 
-body.dark-mode .navbar {
-    background-color: #1a1a1a !important;
+#hero img {
+    border-radius: var(--radius);
+    border: 1px solid #dee2e6;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
-body.dark-mode .card,
-body.dark-mode .bento-card {
-    background-color: #1e1e1e !important;
-    border-color: #333 !important;
+body.dark-mode #hero img {
+    border: 1px solid var(--color-border);
 }
 
-body.dark-mode .text-secondary {
-    color: #aaaaaa !important;
+/* ==================== BENTO GRID ==================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
 }
 
-body.dark-mode .btn-outline-secondary {
-    border-color: #f39c12;
-    color: #f39c12;
+.bento-card {
+    grid-column: span 6;
+    padding: 18px;
+    border-radius: var(--radius);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-@media (min-width: 768px){
-    .bento-grid{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
-        gap: 20px;
-    }
-    .bento-item-large{
-        grid-column: span 2;
-    }
+
+.bento-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
 }
-@media (max-width: 767px){
-    .bento-grid{
-        display: block;
-    }
+
+.bento-step {
+    font-family: var(--font-title);
+    font-weight: 600;
+    color: rgba(45, 255, 183, 0.5);
+    margin-bottom: 6px;
 }
- /* Styles pour les cartes Bento de tailles différentes  */
+
 .bento-card--wide {
     grid-column: span 8;
 }
@@ -280,4 +339,130 @@ body.dark-mode .btn-outline-secondary {
 .bento-card--tall {
     grid-row: span 2;
     grid-column: span 4;
+}
+
+/* ==================== CATÉGORIES ==================== */
+#categories .card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+}
+
+#categories .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+}
+
+#categories .card h3 i {
+    color: var(--color-accent);
+}
+
+/* ==================== TÉMOIGNAGES ==================== */
+#testimonials .p-4.bg-dark.border {
+    background: rgba(108, 99, 255, 0.18);
+    border-color: var(--color-border);
+    border-radius: var(--radius);
+    color: white;
+}
+
+/* ==================== BOUTONS PRIMAIRES ==================== */
+.btn-primary {
+    background-color: var(--color-accent-2);
+    border-color: var(--color-accent-2);
+}
+
+.btn-primary:hover {
+    background-color: #5a55d4;
+    border-color: #5a55d4;
+}
+
+.btn-success {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #04110c;
+    font-weight: 700;
+}
+
+.btn-success:hover {
+    background-color: #25e6a5;
+    border-color: #25e6a5;
+}
+/* ==================== BOUTONS DE FILTRE (PAGE FREELANCES) ==================== */
+/* Mode clair - boutons filtres */
+.filter-btn {
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6 !important;
+    color: #000000 !important;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-accent-2) !important;
+    border-color: var(--color-accent-2) !important;
+    color: white !important;
+}
+
+/* Mode sombre - boutons filtres */
+body.dark-mode .filter-btn {
+    background-color: transparent !important;
+    border: 1px solid var(--color-border) !important;
+    color: var(--color-text) !important;
+}
+
+body.dark-mode .filter-btn:hover {
+    background-color: var(--color-accent-2) !important;
+    border-color: var(--color-accent-2) !important;
+    color: white !important;
+}
+
+/* Bouton actif (filtré) - mode clair */
+.filter-btn.active-filter {
+    background-color: var(--color-accent-2) !important;
+    border-color: var(--color-accent-2) !important;
+    color: white !important;
+}
+
+/* Bouton actif (filtré) - mode sombre */
+body.dark-mode .filter-btn.active-filter {
+    background-color: var(--color-accent-2) !important;
+    border-color: var(--color-accent-2) !important;
+    color: white !important;
+}
+
+/* ==================== IMAGES ==================== */
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 990px) {
+    .bento-card {
+        grid-column: span 12;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 767px) {
+    .bento-grid {
+        display: block;
+    }
+    .bento-card {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 180px;
+    }
+    .display-5 {
+        font-size: 2.1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
 }

@@ -1,10 +1,38 @@
-# OS files
+# Dossier système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs de code
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Fichiers temporaires
+*.tmp
+*.log
+*.cache
+*.bak
+*.backup
+
+# OS spécifique
 .DS_Store
 Thumbs.db
 
-# Vs Code
-.vscode/
-.idea/
+# Dossier de sauvegarde (si vous en avez)
+*-BACKUP/
+backup/
 
-#Logs
-*.log
+# Fichiers de configuration personnels
+.env
+.env.local
+
+# Dossier node_modules (si jamais)
+node_modules/
+
+# Fichiers de build
+dist/
+build/
+EOF

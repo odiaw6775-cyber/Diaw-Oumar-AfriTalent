@@ -49,9 +49,9 @@
          <section class="pb-4" aria-label="Filtres de recherche">
             <div class="container">
                 <div class="row g-4 align-items-end">
-                    <div col-12 col-md-6 col-lg-4>
+                    <div class="col-12 col-md-6 col-lg-4">
                         <label for="categoryFilter" class="form-label fw-semibold">Categorie</label>
-                        <select name="" id="categoryFilter" class="form-select" aria-label="Filtrer par catégorie">
+                        <select name="category" id="categoryFilter" class="form-select" aria-label="Filtrer par catégorie">
                             <option value="all" selected>Toutes les catégories</option>
                             <option value="web">Developpement web</option>
                             <option value="ui/ux">Design UI/UX</option>
@@ -139,7 +139,7 @@
                       <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100 freelancer-card" data-category="marketing">
                             <img src="images/femm2.jpg" class="card-img-top"  alt="Portrait de Faly Diop , specialiste Marketing Digital">
-                            <div clcard-body>
+                            <div class="card-body">
                                 <h2 class="h5 card-title mb-1">Faly Diop</h2>
                                 <p class="text-secondary mb-2">Marketing Digital</p>
                                 <p class="card-text">Stratégies, contenus, campagnes, acquisitions .</p>
@@ -157,7 +157,7 @@
                       <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100 freelancer-card" data-category="data">
                             <img src="images/homm3.jpg" class="card-img-top"  alt="Portrait de Abdoulaye Wade , Data Analyst">
-                            <div clcard-body>
+                            <div class="card-body">
                                 <h2 class="h5 card-title mb-1">Abdoulaye Wade</h2>
                                 <p class="text-secondary mb-2">Data Analyst</p>
                                 <p class="card-text">Dashboards, KPI, nettoyage, analyse décisionnelle.</p>
@@ -175,7 +175,7 @@
                       <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100 freelancer-card" data-category="devops">
                             <img src="images/homm4.jpg" class="card-img-top" alt="Portrait de Marco Verratti , Ingénieur DevOps Cloud">
-                            <div clcard-body>
+                            <div class="card-body">
                                 <h2 class="h5 card-title mb-1">Marco Verratti</h2>
                                 <p class="text-secondary mb-2">DevOps & Cloud</p>
                                 <p class="card-text">CI/CD , déploiement, monitoring, sécurité cloud.</p>
@@ -193,7 +193,7 @@
                       <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100 freelancer-card" data-category="writing">
                             <img src="images/homm5.jpg" class="card-img-top" alt="Portrait de Amadou Ba , rédacteur technique">
-                            <div clcard-body>
+                            <div class="card-body">
                                 <h2 class="h5 card-title mb-1">Amadou Ba</h2>
                                 <p class="text-secondary mb-2">Redaction tech</p>
                                 <p class="card-text">Docs, articles, guides, vulgarisation et SEO technique.</p>
@@ -211,7 +211,7 @@
                       <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100 freelancer-card" data-category="uiux">
                             <img src="images/homm6.jpg" class="card-img-top" alt="Portrait de Paul Scholes , Designer products">
-                            <div clcard-body>
+                            <div class="card-body">
                                 <h2 class="h5 card-title mb-1">Paul Scholes</h2>
                                 <p class="text-secondary mb-2">Product Designer</p>
                                 <p class="card-text">Wireframes, prototypes, tests utlisateurs, UI pro .</p>
@@ -229,7 +229,7 @@
                       <div class="col-12 col-md-6 col-lg-4">
                         <article class="card h-100 freelancer-card" data-category="data">
                             <img src="images/femm3.jpg" class="card-img-top" alt="Portrait de Awa Diop , Ingénieure machine learning">
-                            <div clcard-body>
+                            <div class="card-body">
                                 <h2 class="h5 card-title mb-1">Awa Diop</h2>
                                 <p class="text-secondary mb-2">Machine Learning</p>
                                 <p class="card-text">Modéles ML, prévisions, classification, automatisation .</p>
@@ -287,7 +287,7 @@
         </div>
     </footer>
     <!-- Modal -->
-     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+     <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true" role="dialog">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">

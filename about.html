@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootsrap.min.css">
+    <title>AfriTalent - À propos</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap">
-     <!-- Bootstrap 5 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- CSS -->
-     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
-            <div class="container"><a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil AfriTalent"><i class="bi bi-stars me-1"></i>AfriTalent</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Ouvrir le menu">
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
+            <div class="container">
+                <a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil">
+                    <i class="bi bi-stars me-1"></i>AfriTalent
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Ouvrir le menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
                         <li class="nav-item"><a href="freelances.html" class="nav-link">Freelances</a></li>
-                        <li class="nav-item"><a href="tarifs.html"  class="nav-link">Tarifs</a></li>
-                        <li class="nav-item"><a href="about.html" class="nav-link active">A propos</a></li>
+                        <li class="nav-item"><a href="tarifs.html" class="nav-link">Tarifs</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link active">À propos</a></li>
                         <li class="nav-item"><a href="#" class="nav-link" aria-label="Page Blog">Blog</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                         <li class="nav-item ms-lg-2"><a href="contact.html" class="btn btn-success">Rejoindre AfriTalent</a></li>
@@ -39,200 +38,203 @@
             </div>
         </nav>
     </header>
+
     <main class="pt-5">
-        <!-- Intro -->
+        <!-- SECTION NOTRE HISTOIRE -->
         <section class="py-5">
-            <div class="container py-4">
-                <h1 class="fw-bold">A propos d'AfriTalent</h1>
-                <p class="text-secondary mb-0">
-                    AfriTalent est une plateforme fictive qui met en relation des freelances tech et des entreprises. <br> Cette page présente notre histoire, notre équipe, nos valeurs et nos chiffres clés.
-                </p>
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-12 col-lg-6">
+                        <h1 class="fw-bold">Notre Histoire</h1>
+                        <p>AfriTalent est née d'un constat simple : l'Afrique regorge de talents tech exceptionnels, mais il manquait une plateforme de confiance pour les connecter aux entreprises.</p>
+                        <p>Créée en 2024, notre mission est de faciliter la mise en relation entre freelances africains et entreprises du monde entier.</p>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <img src="images/futuriste.png" alt="Illustration représentant une équipe tech travaillant sur une plateforme moderne" class="img-fluid rounded-4">
+                    </div>
+                </div>
             </div>
         </section>
-        <!-- Notre histoire -->
-         <section class="pb-5" aria-label="Notre histoire">
+
+        <!-- SECTION COMMENT ÇA MARCHE (Bento Grid) -->
+        <section class="py-5" id="how">
             <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <h2 class="fw-bold mb-3">Notre histoire</h2>
-                        <p class="text-secondary">
-                            AfriTalent est né d'un constat simple : le marché freelance tech en Afrique progresse vite, mais il manque souvent d'espaces fiables pour connecter les bons talents aux bonnes missions .
-                        </p>
-                        <p class="text-secondary">
-                            Notre objectif est de proposer une expérience moderne : profils clairs, catégories de services, matching rapide et un interface accessible sur mobile comme sur ordianteur .
-                        </p>
-                        <p class="text-secondary mb-0">
-                            J'ai construit ce site vitrine pour montrer mes connaissances en HTML, CSS, BOOTSTRAP et JAVASCRIPT .
-                        </p>
+                <h2 class="fw-bold mb-4">Comment ça marche ?</h2>
+                <div class="bento-grid">
+                    <article class="bento-card">
+                        <p class="bento-step">01</p>
+                        <h2 class="h5"><i class="bi bi-person-plus me-1"></i>Créer un compte</h2>
+                        <p>Freelance ou entreprise, démarrez en une minute.</p>
+                    </article>
+                    <article class="bento-card bento-card--wide">
+                        <p class="bento-step">02</p>
+                        <h2 class="h5"><i class="bi bi-grid-1x2 me-1"></i>Choisir une catégorie</h2>
+                        <p>Web, UI/UX, Data, Devops, Contenus, Marketing et plus.</p>
+                    </article>
+                    <article class="bento-card">
+                        <p class="bento-step">03</p>
+                        <h2 class="h5"><i class="bi bi-chat-dots me-1"></i>Matcher et discuter</h2>
+                        <p>Comparer les profils, avis, tarifs et contacter rapidement.</p>
+                    </article>
+                    <article class="bento-card bento-card--tall">
+                        <p class="bento-step">04</p>
+                        <h2 class="h5"><i class="bi bi-rocket-takeoff me-1"></i>Lancer la mission</h2>
+                        <p>Paiement sécurisé, suivi de mission, facturation claire.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION L'ÉQUIPE -->
+        <section class="py-5" id="team">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center">L'équipe</h2>
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 text-center">
+                            <img src="images/africain1.jpg" alt="Portrait de Oumar DIAW, Fondateur" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="h5">Oumar DIAW</h3>
+                                <p class="text-secondary">Fondateur & CEO</p>
+                            </div>
+                        </div>
                     </div>
-                    <div>
-                        <img src="" alt="Illustration représentant une équipe tech travaillant sur une plateforme moderne" class="img-fluid rounded-4">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 text-center">
+                            <img src="images/femm2.jpg" alt="Portrait de Thiané DIAW, Designer Product" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="h5">Thiané DIAW</h3>
+                                <p class="text-secondary">Designer Product</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 text-center">
+                            <img src="images/femm1.jpg" alt="Portrait de Oumou Kane, Développeuse principale" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="h5">Oumou Kane</h3>
+                                <p class="text-secondary">Développeuse principale</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="card h-100 text-center">
+                            <img src="images/homm2.jpg" alt="Portrait de Alban Lafont, Responsable Cloud" class="card-img-top">
+                            <div class="card-body">
+                                <h3 class="h5">Alban Lafont</h3>
+                                <p class="text-secondary">Responsable Cloud</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-         </section>
-         <!-- L'equipe -->
-          <section class="pb-5" aria-label="l'équipe">
+        </section>
+
+        <!-- SECTION NOS VALEURS -->
+        <section class="py-5" id="values">
             <div class="container">
-                <h2 class="fw-bold mb-4">L'équipe</h2>
-                <div class="row g-3">
-                    <!-- Membre 1 -->
-                     <div class="col-12 col-md-6 col-lg-3">
-                        <article class="card h-100"><img src="" alt="Portrait de Oumar DIAW, Fondateur" class="img-card-top">
-                            <div class="card-body">
-                                <h3 class="h5 mb-1">Oumar Diaw</h3>
-                                <p class="text-secondary mb-3">Fondateur</p>
-                                <div class="d-flex gap-2">
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="LinkedIn de Oumar"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="X de Oumar"><i class="bi bi-x"></i></a>
-                                </div>
-                            </div>
-                        </article>
-                     </div>
-                     <!-- Membre 2 -->
-                      <div class="col-12 col-md-6 col-lg-3">
-                        <article class="card h-100"><img src="" alt="Portrait de Thiané DIAW, designer product" class="img-card-top">
-                            <div class="card-body">
-                                <h3 class="h5 mb-1">Thiané Diaw</h3>
-                                <p class="text-secondary mb-3">Product Designer</p>
-                                <div class="d-flex gap-2">
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="LinkedIn de Thiané"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="Portfolio de Thiané"><i class="bi bi-globe2"></i></a>
-                                </div>
-                            </div>
-                        </article>
-                     </div>
-                      <!-- Membre 3 -->
-                      <div class="col-12 col-md-6 col-lg-3">
-                        <article class="card h-100"><img src="" alt="Portrait de Oumou Kane, développeur principale" class="img-card-top">
-                            <div class="card-body">
-                                <h3 class="h5 mb-1">Oumou Kane</h3>
-                                <p class="text-secondary mb-3">Lead Developer</p>
-                                <div class="d-flex gap-2">
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="Github de Oumou"><i class="bi bi-github"></i></a>
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="LinkedIn de Oumou"><i class="bi bi-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </article>
-                     </div>
-                      <!-- Membre 4 -->
-                      <div class="col-12 col-md-6 col-lg-3">
-                        <article class="card h-100"><img src="" alt="Portrait de Alban Lafont, responsable cloud" class="img-card-top">
-                            <div class="card-body">
-                                <h3 class="h5 mb-1">Alban Lafont</h3>
-                                <p class="text-secondary mb-3">Cloud & Ops</p>
-                                <div class="d-flex gap-2">
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="LinkedIn de Alban"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="btn btn-outline-light btn-sm" aria-label="X de Alban"><i class="bi bi-x"></i></a>
-                                </div>
-                            </div>
-                        </article>
-                     </div>
-                </div>
-            </div>
-          </section>
-          <!-- Nos valeurs -->
-           <section class="pb-5" aria-label="Nos valeurs">
-            <div class="container">
-                <h2 class="fw-bold mb-4">Nos valeurs</h2>
-                <div class="row g-3">
+                <h2 class="fw-bold mb-4 text-center">Nos valeurs</h2>
+                <div class="row g-4">
                     <div class="col-12 col-md-6 col-lg-3">
-                        <article class="p-4 rounded-4 bg-dark border h-100">
-                            <h3 class="h5 mb-2"><i class="bi bi-lightning-charge me-1"></i>Innovation</h3>
-                            <p class="text-secondary mb-0">Créer un expérience moderne, rapide et utile.</p>
-                        </article>
+                        <div class="text-center p-3">
+                            <i class="bi bi-lightbulb-fill fs-1 text-primary"></i>
+                            <h3 class="h5 mt-3">Innovation</h3>
+                            <p>Nous innovons constamment pour connecter les meilleurs talents.</p>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <article class="p-4 rounded-4 bg-dark border h-100">
-                            <h3 class="h5 mb-2"><i class="bi bi-universal-access me-1"></i>Accessibilité</h3>
-                            <p class="text-secondary mb-0">Un site lisible, responsive.</p>
-                        </article>
+                        <div class="text-center p-3">
+                            <i class="bi bi-globe2 fs-1 text-primary"></i>
+                            <h3 class="h5 mt-3">Accessibilité</h3>
+                            <p>Notre plateforme est accessible à tous, partout en Afrique.</p>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <article class="p-4 rounded-4 bg-dark border h-100">
-                            <h3 class="h5 mb-2"><i class="bi bi-people me-1"></i>Communauté</h3>
-                            <p class="text-secondary mb-0">Mettre en avant les talents et favoriser des missions de qualité.</p>
-                        </article>
+                        <div class="text-center p-3">
+                            <i class="bi bi-people-fill fs-1 text-primary"></i>
+                            <h3 class="h5 mt-3">Communauté</h3>
+                            <p>Nous construisons une communauté forte de freelances et entreprises.</p>
+                        </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-3">
-                        <article class="p-4 rounded-4 bg-dark border h-100">
-                            <h3 class="h5 mb-2"><i class="bi bi-award me-1"></i>Excellence</h3>
-                            <p class="text-secondary mb-0">Une plateforme fiable, avec des profils clairs et un bon matching.</p>
-                        </article>
+                        <div class="text-center p-3">
+                            <i class="bi bi-trophy-fill fs-1 text-primary"></i>
+                            <h3 class="h5 mt-3">Excellence</h3>
+                            <p>Nous visons l'excellence dans chaque mission réalisée.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-           </section>
-           <!-- CHIFFRES CLES -->
-            <section class="pb-5" aria-label="Chiffres clés">
-                <div class="container">
-                    <h2 class="fw-bold mb-4">Chiffres clés</h2>
-                    <!-- Bento GRID -->
-                     <div class="bento-grid">
-                        <article class="bento-card bento-card--wide">
-                            <p class="text-secondary mb-1">Freelances actifs</p>
-                            <p class="display-6 fw-bold mb-0"><span class="counter" data-target="2500">0</span>+</p>
-                        </article>
-                        <article class="bento-card">
-                            <p class="text-secondary mb-1">Entreprises</p>
-                            <p class="display-6 fw-bold mb-0"><span class="counter" data-target="1000">0</span>+</p>
-                        </article>
-                        <article class="bento-card bento-card--tall">
-                            <p class="text-secondary mb-1">Missions réalisées</p>
-                            <p class="display-6 fw-bold mb-0"><span class="counter" data-target="15000">0</span>+</p>
-                            <p class="text-secondary mt-2 mb-0">Projets web, UI/UX, data & cloud .</p>
-                        </article>
-                        <article class="bento-card">
-                            <p class="text-secondary mb-1">Satisfaction</p>
-                            <p class="display-6 fw-bold mb-0"><span class="counter" data-target="99">0</span>%</p>
-                        </article>
-                     </div>
-                     
+        </section>
+
+        <!-- SECTION CHIFFRES CLÉS -->
+        <section class="py-5" id="stats">
+            <div class="container">
+                <h2 class="fw-bold mb-4 text-center">AfriTalent en chiffres</h2>
+                <div class="row text-center g-4">
+                    <div class="col-12 col-md-4">
+                        <div class="p-4 rounded-4 border">
+                            <div class="display-4 fw-bold text-primary"><span class="counter" data-target="2500">0</span>+</div>
+                            <p>Freelances</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-4 rounded-4 border">
+                            <div class="display-4 fw-bold text-primary"><span class="counter" data-target="800">0</span>+</div>
+                            <p>Entreprises</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-4 rounded-4 border">
+                            <div class="display-4 fw-bold text-primary"><span class="counter" data-target="12000">0</span>+</div>
+                            <p>Missions réalisées</p>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
     </main>
+
     <!-- Footer -->
-     <footer class="py-5 border-top">
+    <footer class="py-5 border-top">
         <div class="container">
             <div class="row g-4">
-                <div class="col-12 col-lg-3">
+                <div class="col-12 col-lg-4">
                     <p class="fw-bold mb-2"><i class="bi bi-stars me-1"></i>AfriTalent</p>
-                    <p class="text-secondary mb-0">Plateforme fictive de mise en relation entre freelances tech et entreprises.</p>
+                    <p>Plateforme fictive de mise en relation entre freelances tech et entreprises en Afrique.</p>
                 </div>
                 <div class="col-6 col-lg-3">
                     <p class="fw-semibold mb-2">Liens utiles</p>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="index.html" class="link-secondary">Accueil</a></li>
-                        <li><a href="freelances.html" class="link-secondary">Freelances</a></li>
-                        <li><a href="tarifs.html" class="link-secondary">Tarifs</a></li>
+                        <li><a href="freelances.html">Freelances</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="about.html">À propos</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-3">
                     <p class="fw-semibold mb-2">Ressources</p>
                     <ul class="list-unstyled mb-0">
-                        <li><a href="#" class="link-secondary" aria-label="Blog">Blog</a></li>
-                        <li><a href="contact.html" class="link-secondary">Support</a></li>
-                        
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="contact.html">Support</a></li>
                     </ul>
                 </div>
                 <div class="col-12 col-lg-3">
                     <p class="fw-semibold mb-2">Contact</p>
-                    <p class="text-secondary mb-2">contact@talent-afritalent.africa</p>
+                    <p>contact@afritalent.sn</p>
                     <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers Twitter"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="btn btn-outline-light btn-sm" aria-label="Lien vers LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="X"><i class="bi bi-x"></i></a>
+                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-            <p class="text-secondary mt-4 mb-0">
-                &copy; <span id="year">2026</span>AfriTalent. Tous droits réservés.
-            </p>
+            <div class="text-center mt-4 pt-3 border-top">
+                <p class="mb-0">&copy; <span id="year">2026</span> AfriTalent. Tous droits réservés.</p>
+            </div>
         </div>
-     </footer>
-     <!-- Bootsrap 5 -->
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-     <!-- JS -->
-      <script src="js/main.js"></script>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
