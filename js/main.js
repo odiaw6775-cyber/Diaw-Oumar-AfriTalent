@@ -84,14 +84,7 @@ const initBackToTop = () => {
     });
 };
 
-// Initialisation
-document.addEventListener('DOMContentLoaded', () => {
-    initDarkMode();
-    initNavbarScroll();
-    initBackToTop();
-    initCounters();
-    initFadeIn();
-});
+
 
 // ==================== COMMIT 7 ====================
 // 4. COMPTEURS ANIMÉS au scroll
@@ -164,3 +157,141 @@ const initFadeIn = () => {
         observer.observe(section);
     });
 };
+// ==================== COMMIT 8 ====================
+// 6. FILTRAGE DES FREELANCES
+// 7. VALIDATION FORMULAIRE CONTACT
+
+
+// 6. FILTRAGE DYNAMIQUE
+const initFilters = () => {
+    const filterSelect = document.getElementById('categoryFilter');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.freelancer-card');
+
+    if (!filterSelect && filterButtons.length === 0) return;
+
+    const filterCards = (category) => {
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            if (category === 'all' || cardCategory === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    };
+
+    if (filterSelect) {
+        filterSelect.addEventListener('change', (e) => {
+            filterCards(e.target.value);
+        });
+    }
+
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const category = btn.getAttribute('data-filter');
+            filterCards(category);
+        });
+    });
+};
+
+
+// 7. VALIDATION FORMULAIRE DE CONTACT
+const initContactForm = () => {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        let isValid = true;
+        
+        // Vérifier chaque champ
+        const nom = document.getElementById('nom');
+        const prenom = document.getElementById('prenom');
+        const email = document.getElementById('email');
+        const sujet = document.getElementById('sujet');
+        const message = document.getElementById('message');
+        
+        // Validation Nom
+        if (!nom.value.trim()) {
+            showError(nom, 'Le nom est requis');
+            isValid = false;
+        } else {
+            clearError(nom);
+        }
+        
+        // Validation Prénom
+        if (!prenom.value.trim()) {
+            showError(prenom, 'Le prénom est requis');
+            isValid = false;
+        } else {
+            clearError(prenom);
+        }
+        
+        // Validation Email (regex)
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.value.trim() || !emailRegex.test(email.value)) {
+            showError(email, 'Email valide requis');
+            isValid = false;
+        } else {
+            clearError(email);
+        }
+        
+        // Validation Sujet
+        if (!sujet.value) {
+            showError(sujet, 'Veuillez choisir un sujet');
+            isValid = false;
+        } else {
+            clearError(sujet);
+        }
+        
+        // Validation Message (20 caractères minimum)
+        if (!message.value.trim() || message.value.trim().length < 20) {
+            showError(message, 'Le message doit contenir au moins 20 caractères');
+            isValid = false;
+        } else {
+            clearError(message);
+        }
+        
+        // Affichage du message de succès
+        if (isValid) {
+            const successMsg = document.getElementById('successMessage');
+            if (successMsg) {
+                successMsg.style.display = 'block';
+                successMsg.textContent = '✅ Message envoyé avec succès ! Nous vous répondrons rapidement.';
+            }
+            form.reset();
+        }
+    });
+};
+
+// Fonctions helpers pour les erreurs
+function showError(input, message) {
+    input.classList.add('is-invalid');
+    let errorDiv = input.nextElementSibling;
+    if (!errorDiv || !errorDiv.classList.contains('invalid-feedback')) {
+        errorDiv = document.createElement('div');
+        errorDiv.className = 'invalid-feedback';
+        input.parentNode.insertBefore(errorDiv, input.nextSibling);
+    }
+    errorDiv.textContent = message;
+}
+
+function clearError(input) {
+    input.classList.remove('is-invalid');
+    const errorDiv = input.nextElementSibling;
+    if (errorDiv && errorDiv.classList.contains('invalid-feedback')) {
+        errorDiv.textContent = '';
+    }
+}
+// Initialisation
+document.addEventListener('DOMContentLoaded', () => {
+    initDarkMode();
+    initNavbarScroll();
+    initBackToTop();
+    initCounters();
+    initFadeIn();
+    initFilters();
+    initContactForm();
+});

@@ -58,7 +58,7 @@ section{
 #mainNavbar{
     min-height: var(--nav-height);
     background: transparent;
-    transition: background-color 0.25 ease , box-shadow 0.25 ease;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease; 
 }
 #mainNavbar .navbar-brand{
     font-family: var(--font-title);
@@ -72,11 +72,8 @@ section{
 #mainNavbar .nav-link.active{
     color: var(--color-text);
 }
-.navbar-scrolled{
-    background: rgba(18,27,46,0.97);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0,0 ,0 ,0.35);
-}
+
+
 .card{
     background: rgba(18,27,46,0.75);
     border: 1px solid var(--color-border);
@@ -162,11 +159,19 @@ footer{
     color: rgba(50,255 ,190  ,0.50);
     margin-bottom: 6px;
 }
-@media (max-width 990px){
-    .bento-card,.bento-card--wide,.bento-card--tall{
-        grid-column: 12px;
+@media (max-width: 990px){
+    .bento-card{
+        grid-column: span 12; 
         grid-row: auto;
     }
+    .bento-card--wide{
+        grid-column: span 8;
+    }
+    .bento-card--tall {
+    grid-row: span 2;
+    grid-column: span 4;
+    }
+     
 }
 /* Catégorie */
 #categories .card{
@@ -228,7 +233,8 @@ footer{
 
 /* Dark Mode CSS */
 body.dark-mode {
-    background-color: #121212;
+    background: #121212 !important;
+    background-color: #121212 !important;
     color: #e0e0e0;
 }
 
@@ -265,4 +271,13 @@ body.dark-mode .btn-outline-secondary {
     .bento-grid{
         display: block;
     }
+}
+ /* Styles pour les cartes Bento de tailles différentes  */
+.bento-card--wide {
+    grid-column: span 8;
+}
+
+.bento-card--tall {
+    grid-row: span 2;
+    grid-column: span 4;
 }
