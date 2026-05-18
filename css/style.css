@@ -188,6 +188,68 @@ footer{
     border-radius: var(--radius);
     color: white;
 }
+/* Navbar au scroll */
+/* ==================== COMMIT 6 ==================== */
+
+/* Navbar au scroll */
+.navbar-scrolled {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Bouton Retour en haut */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#backToTop:hover {
+    background-color: #0b5ed7;
+    transform: scale(1.05);
+}
+
+#backToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Dark Mode CSS */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+    background-color: #1a1a1a !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .bento-card {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+}
+
+body.dark-mode .text-secondary {
+    color: #aaaaaa !important;
+}
+
+body.dark-mode .btn-outline-secondary {
+    border-color: #f39c12;
+    color: #f39c12;
+}
 @media (min-width: 768px){
     .bento-grid{
         display: grid;
