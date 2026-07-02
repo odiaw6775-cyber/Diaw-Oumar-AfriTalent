@@ -1,468 +1,469 @@
-/* ==================== VARIABLES CSS ==================== */
+/* ============================================================
+   AfriTalent - style.css
+   Version complète corrigée
+   ============================================================ */
+
+/* ============================================================
+   VARIABLES CSS
+   ============================================================ */
 :root {
-    /* Mode sombre */
-    --color-bg: #0b1220;
-    --color-surface: #121b2e;
-    --color-text: #eaf0ff;
-    --color-muted: rgba(234, 240, 255, 0.70);
-    --color-accent: #2dffb7;
-    --color-accent-2: #6c63ff;
-    --color-border: rgba(234, 240, 255, 0.12);
-    
-    /* Tailles et polices */
+    --primary: #6C3CE1;
+    --primary-dark: #5A2DBF;
+    --primary-light: #8B6BF0;
+    --secondary: #00D4AA;
+    --accent: #FF6B6B;
+    --dark: #0b1220;
+    --surface: #121b2e;
+    --text: #eaf0ff;
+    --muted: rgba(234,240,255,0.7);
+    --border: rgba(234,240,255,0.12);
+    --font-title: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
     --radius: 18px;
-    --font-title: "Space Grotesk", system-ui, -apple-system, sans-serif;
-    --font-body: "Inter", system-ui, -apple-system, sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --shadow: 0 8px 40px rgba(108,60,225,0.2);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 20px rgba(108,60,225,0.12);
     --nav-height: 76px;
+    
+    /* Couleurs mode clair */
+    --light-text: #1A1A2E;
+    --light-muted: #4a4a6a;
+    --light-bg: #ffffff;
+    --light-gray: #f8f7fc;
+    --light-border: #dee2e6;
+    --light-card: #ffffff;
 }
 
-/* ==================== RESET ==================== */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);color:var(--light-text);background:var(--light-bg);line-height:1.6;transition:background .3s,color .3s}
+h1,h2,h3,h4,h5,h6{font-family:var(--font-title);font-weight:700;color:var(--light-text)}
+p,span,li,label,div{color:var(--light-text)}
+.text-secondary{color:var(--light-muted)!important}
+.text-muted{color:var(--light-muted)!important}
+a:not(.btn):not(.nav-link){color:var(--primary);text-decoration:none;transition:.2s}
+a:not(.btn):not(.nav-link):hover{color:var(--primary-dark)}
+img{max-width:100%;height:auto}
 
-/* ==================== MODE CLAIR (DÉFAUT) ==================== */
-body {
-    margin: 0;
-    font-family: var(--font-body);
-    color: #000000 !important;
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-}
+/* ============================================================
+   UTILITAIRES
+   ============================================================ */
+.text-gradient{background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-tag{display:inline-block;background:rgba(108,60,225,0.1);color:var(--primary);padding:4px 16px;border-radius:20px;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+.section-header{margin-bottom:30px;text-align:center}
+.section-header h2{font-size:2.5rem;font-weight:700;color:var(--light-text);margin-bottom:10px}
+.section-subtitle{color:var(--light-muted);font-size:1.1rem}
+.section-tag{display:inline-block;background:rgba(108,60,225,0.1);color:var(--primary);padding:4px 16px;border-radius:20px;font-size:.85rem;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 
-/* Titres en noir */
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-title);
-    letter-spacing: 0.2px;
-    color: #000000 !important;
-}
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+#mainNavbar{min-height:var(--nav-height);background:rgba(255,255,255,0.95)!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:.3s;box-shadow:0 2px 10px rgba(0,0,0,0.05);padding:8px 0}
+#mainNavbar .navbar-brand{font-family:var(--font-title);font-size:1.5rem;font-weight:700;color:var(--light-text)!important}
+#mainNavbar .navbar-brand .text-gradient{background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+#mainNavbar .nav-link{color:var(--light-text)!important;font-weight:500;padding:8px 12px;border-radius:var(--radius-sm);transition:.2s}
+#mainNavbar .nav-link:hover{color:var(--primary)!important}
+#mainNavbar .nav-link.active{color:var(--primary)!important;background:rgba(108,60,225,0.08)}
+#mainNavbar.navbar-scrolled{background:rgba(255,255,255,0.98)!important;box-shadow:0 4px 30px rgba(0,0,0,0.08);padding:4px 0}
 
-/* Textes en noir */
-p, span, li, label, div, section, article {
-    color: #000000 !important;
-}
+/* Dark Mode Toggle */
+.theme-toggle{border:2px solid var(--light-muted);color:var(--light-text);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;padding:0;transition:.3s;background:transparent;cursor:pointer}
+.theme-toggle:hover{background:var(--primary);border-color:var(--primary);color:#fff}
 
-/* Texte secondaire en gris foncé */
-.text-secondary {
-    color: #4a4a4a !important;
-}
+/* ============================================================
+   FADE-IN SECTIONS
+   ============================================================ */
+.fade-in-section{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.fade-in-section.is-visible{opacity:1;transform:translateY(0)}
 
-/* Liens en noir */
-a:not(.btn):not(.nav-link) {
-    color: #000000 !important;
-    text-decoration: none;
-}
+/* ============================================================
+   COMPTEURS ANIMÉS
+   ============================================================ */
+.counter{font-family:var(--font-title);font-weight:700;color:var(--primary);font-size:2.5rem}
+.stat-suffix{font-size:2rem;font-weight:700;color:var(--primary)}
+.stat-label{font-weight:500;color:var(--light-muted)}
+.stat-number{font-size:3rem;font-weight:700;color:var(--primary)}
+.stat-description{color:var(--light-muted);font-size:.9rem}
 
-a:not(.btn):not(.nav-link):hover {
-    color: var(--color-accent-2) !important;
-}
+/* ============================================================
+   RETOUR EN HAUT
+   ============================================================ */
+#backToTop{position:fixed;bottom:30px;right:30px;width:50px;height:50px;border-radius:50%;background:var(--primary);color:#fff;border:none;font-size:1.5rem;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(20px);transition:.3s;z-index:9999;box-shadow:0 4px 20px rgba(108,60,225,0.3)}
+#backToTop.show{opacity:1;visibility:visible;transform:translateY(0)}
+#backToTop:hover{background:var(--primary-dark);transform:translateY(-3px)}
 
-/* ==================== CARTES EN MODE CLAIR ==================== */
-.card, .bento-card, .freelancer-card {
-    background: #f8f9fa !important;
-    border: 1px solid #dee2e6 !important;
-    border-radius: var(--radius);
-}
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+#hero{padding:100px 0 60px;background:linear-gradient(180deg,var(--light-gray),var(--light-bg))}
+.hero-title{font-family:var(--font-title);font-weight:700;line-height:1.1;color:var(--light-text)}
+.hero-subtitle{color:var(--light-muted)}
+.highlight-text{color:var(--primary);font-weight:600}
 
-.card *,
-.bento-card *,
-.freelancer-card *,
-.card .card-title,
-.card .card-text,
-.card h2, .card h3, .card h4, .card h5,
-.card p, .card span, .card li,
-.freelancer-card p, .freelancer-card span, .freelancer-card li {
-    color: #000000 !important;
-}
+/* ============================================================
+   STATISTIQUES
+   ============================================================ */
+.stat-card{background:var(--light-card);border-radius:var(--radius);border:1px solid var(--light-border)!important;transition:.3s;padding:20px}
+.stat-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.stat-card .counter{color:var(--primary)}
+.stat-card .stat-suffix{color:var(--primary)}
+.stat-card .stat-label{color:var(--light-muted)}
 
-/* Prix en noir */
-.display-6, .price, .card .display-6 {
-    color: #000000 !important;
-}
+/* ============================================================
+   SECTION COMMENT ÇA MARCHE - BENTO GRID (CORRIGÉ)
+   ============================================================ */
+#how{background:var(--light-gray);padding:60px 0}
+.bento-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-top:20px}
+.bento-card{grid-column:span 6;padding:30px;background:var(--light-card)!important;border-radius:var(--radius);border:1px solid var(--light-border)!important;transition:all .3s ease;box-shadow:var(--shadow-sm)}
+.bento-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--primary)!important}
+.bento-step{font-family:var(--font-title);font-size:2.5rem;font-weight:700;color:rgba(108,60,225,0.12)!important;display:block;margin-bottom:5px;line-height:1}
+.bento-icon{font-size:2rem;color:var(--primary)!important;display:block;margin-bottom:10px}
+.bento-card h3{font-family:var(--font-title);font-weight:700;font-size:1.2rem;color:var(--light-text)!important;margin-bottom:8px}
+.bento-card p{font-family:var(--font-body);font-size:.95rem;color:var(--light-muted)!important;line-height:1.6;margin:0}
+.bento-card--wide{grid-column:span 8}
+.bento-card--tall{grid-row:span 2;grid-column:span 4}
 
-/* Badge populaire */
-.badge.bg-primary {
-    color: #ffffff !important;
-}
+/* ============================================================
+   CATÉGORIES
+   ============================================================ */
+#categories{background:var(--light-bg);padding:60px 0}
+.category-card{background:var(--light-card);border:1px solid var(--light-border);border-radius:var(--radius);transition:all .3s ease;cursor:pointer;position:relative;overflow:hidden}
+.category-card::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--primary),var(--secondary));transform:scaleX(0);transition:.3s}
+.category-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--primary)}
+.category-card:hover::after{transform:scaleX(1)}
+.category-icon{font-size:2.5rem;color:var(--primary);display:block;margin-bottom:10px}
+.category-card h3{font-weight:600;color:var(--light-text);margin-bottom:5px}
+.category-card p{color:var(--light-muted);font-size:.9rem;margin:0}
+.category-count{color:var(--light-muted);font-size:.85rem}
+.category-count i{color:var(--primary)}
 
-/* Icônes dans les cartes */
-.card .text-success, .freelancer-card .text-success {
-    color: #198754 !important;
-}
+/* ============================================================
+   TÉMOIGNAGES
+   ============================================================ */
+#testimonials{background:var(--light-gray);padding:60px 0}
+.testimonial-card{background:var(--light-card);border-radius:var(--radius);max-width:700px;margin:0 auto;border:1px solid var(--light-border);padding:30px;box-shadow:var(--shadow-sm)}
+.testimonial-quote{font-size:1.1rem;font-style:italic;color:var(--light-text);line-height:1.6}
+.testimonial-stars{color:#FFB800;font-size:1.2rem;letter-spacing:2px;margin-bottom:15px}
+#testimonialCarousel .carousel-control-prev,#testimonialCarousel .carousel-control-next{width:40px;height:40px;background:var(--primary);border-radius:50%;top:50%;transform:translateY(-50%);opacity:1}
+#testimonialCarousel .carousel-control-prev{left:-20px}
+#testimonialCarousel .carousel-control-next{right:-20px}
+#testimonialCarousel .carousel-control-prev-icon,#testimonialCarousel .carousel-control-next-icon{width:20px;height:20px}
 
-.card .text-danger, .freelancer-card .text-danger {
-    color: #dc3545 !important;
-}
+/* ============================================================
+   CTA
+   ============================================================ */
+#cta{padding:60px 0}
+.cta-banner{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border-radius:var(--radius-lg);padding:50px!important}
+.cta-banner h2,.cta-banner p{color:#fff!important}
+.cta-banner .btn-light{color:var(--primary);font-weight:600;padding:12px 36px}
+.cta-banner .btn-light:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 
-/* ==================== NAVBAR MODE CLAIR ==================== */
-#mainNavbar {
-    min-height: var(--nav-height);
-    background: #ffffff !important;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
+/* ============================================================
+   PAGE HEADER
+   ============================================================ */
+.page-header{padding:80px 0 40px;background:linear-gradient(180deg,var(--light-gray),var(--light-bg))}
+.page-header h1{color:var(--light-text);font-size:3rem;font-weight:700}
+.page-header p{color:var(--light-muted)}
 
-#mainNavbar .navbar-brand,
-#mainNavbar .nav-link {
-    color: #000000 !important;
-    font-family: var(--font-title);
-}
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:#0A0A1A;color:rgba(255,255,255,0.8);padding:60px 0 30px}
+.footer-brand{font-family:var(--font-title);font-size:1.5rem;color:#fff}
+.footer-brand span{color:var(--secondary)}
+.footer-description{color:rgba(255,255,255,0.7)!important;font-size:.95rem;line-height:1.6}
+.footer h5{color:#fff;font-weight:600;margin-bottom:15px}
+.footer-links li{margin-bottom:8px}
+.footer-links a{color:rgba(255,255,255,0.7)!important;transition:.2s}
+.footer-links a:hover{color:var(--secondary)!important}
+.footer-contact li{color:rgba(255,255,255,0.7)!important;display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.footer-contact i{color:var(--secondary);width:20px}
+.social-links{display:flex;gap:10px;margin-top:15px}
+.social-links a{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);transition:.3s}
+.social-links a:hover{background:var(--primary);color:#fff;transform:translateY(-3px)}
+.footer-copyright{color:rgba(255,255,255,0.5)!important;font-size:.9rem;margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.05)}
+.footer-copyright .credit{color:rgba(255,255,255,0.3)!important}
 
-#mainNavbar .nav-link:hover {
-    color: var(--color-accent-2) !important;
-}
+/* ============================================================
+   FREELANCES - FILTRES
+   ============================================================ */
+#filters-section{background:var(--light-bg);padding:20px 0}
+.freelance-card{transition:opacity .3s,transform .3s}
+.freelance-card-inner{background:var(--light-card);border:1px solid var(--light-border);border-radius:var(--radius);transition:all .3s ease;height:100%;overflow:hidden}
+.freelance-card-inner:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--primary)}
+.freelance-card-inner .card-img-top{height:200px;object-fit:cover}
+.freelance-rating{color:#FFB800;margin-bottom:10px}
+.rating-number{color:var(--light-muted);font-weight:600;margin-left:5px}
+.freelance-specialty{color:var(--primary);font-weight:600;font-size:.9rem}
+.freelance-bio{color:var(--light-muted);font-size:.9rem;margin:10px 0}
+.freelance-price{margin:15px 0}
+.freelance-price .price{font-size:1.5rem;font-weight:700;color:var(--primary)}
+.freelance-price .per-hour{color:var(--light-muted);font-size:.9rem}
 
-#mainNavbar .nav-link.active {
-    color: var(--color-accent-2) !important;
-    font-weight: bold;
-}
+/* Filtres */
+.filters-wrapper{display:flex;align-items:center;gap:15px;flex-wrap:wrap;padding:20px 0}
+.filter-label{font-weight:600;color:var(--light-text);margin:0}
+#categoryFilter{max-width:300px;border-radius:var(--radius-sm);background:var(--light-card);border:1px solid var(--light-border);color:var(--light-text)}
+.filter-btn{background:var(--light-gray);border:1px solid var(--light-border);color:var(--light-text);border-radius:20px;padding:6px 16px;transition:.3s;font-size:.85rem;cursor:pointer}
+.filter-btn:hover{background:var(--primary);border-color:var(--primary);color:#fff}
+.filter-btn.active{background:var(--primary);border-color:var(--primary);color:#fff}
+#resultCount{color:var(--light-muted)}
+#visibleCount{color:var(--primary);font-weight:700}
 
-/* ==================== FOOTER MODE CLAIR ==================== */
-footer {
-    background: #f8f9fa !important;
-    border-top: 1px solid #dee2e6 !important;
-}
+/* ============================================================
+   TARIFS
+   ============================================================ */
+#pricing{background:var(--light-bg);padding:60px 0}
+.pricing-card{background:var(--light-card);border-radius:var(--radius);border:1px solid var(--light-border);transition:all .3s ease;position:relative;padding:30px 20px}
+.pricing-card:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:var(--primary)}
+.pricing-popular{border:2px solid var(--primary);transform:scale(1.02);position:relative}
+.pricing-popular:hover{transform:scale(1.02) translateY(-8px)}
+.pricing-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--primary);color:#fff;padding:4px 20px;border-radius:20px;font-size:.8rem;font-weight:600}
+.pricing-icon{font-size:2.5rem;color:var(--primary);display:block;margin-bottom:15px}
+.pricing-plan{font-weight:700;color:var(--light-text)}
+.pricing-desc{color:var(--light-muted);font-size:.95rem}
+.pricing-price{margin:20px 0}
+.pricing-price .price{font-size:2.5rem;font-weight:700;color:var(--primary)}
+.pricing-price .currency,.pricing-price .period{color:var(--light-muted);font-size:1rem}
+.pricing-features{text-align:left;margin:20px 0;list-style:none;padding:0}
+.pricing-features li{padding:6px 0;display:flex;align-items:center;gap:10px;color:var(--light-text)}
+.pricing-features i{font-size:1.1rem;flex-shrink:0}
+.pricing-features .text-success{color:#198754!important}
+.pricing-features .text-danger{color:#dc3545!important}
 
-footer p, footer a, footer span {
-    color: #000000 !important;
-}
+/* FAQ */
+.accordion-item{border:1px solid var(--light-border);margin-bottom:10px;border-radius:var(--radius-sm)!important;overflow:hidden}
+.accordion-button{background:var(--light-card);color:var(--light-text);font-weight:600;padding:15px 20px}
+.accordion-button:not(.collapsed){background:rgba(108,60,225,0.05);color:var(--primary)}
+.accordion-button:focus{box-shadow:none;border-color:var(--primary)}
+.accordion-body{background:var(--light-card);color:var(--light-text);padding:15px 20px}
 
-footer .text-secondary {
-    color: #4a4a4a !important;
-}
+/* ============================================================
+   À PROPOS
+   ============================================================ */
+#about{background:var(--light-bg)}
+.team-card{background:var(--light-card);border-radius:var(--radius);border:1px solid var(--light-border);transition:all .3s ease;overflow:hidden}
+.team-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--primary)}
+.team-avatar{height:200px;object-fit:cover;width:100%}
+.team-role{color:var(--light-muted)!important}
+.team-social{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.team-social a{display:flex;align-items:center;justify-content:center;width:35px;height:35px;border-radius:50%;background:rgba(108,60,225,0.05);color:var(--primary);transition:.3s}
+.team-social a:hover{background:var(--primary);color:#fff}
 
-/* ==================== FORMULAIRES MODE CLAIR ==================== */
-.form-control, .form-select {
-    background-color: #ffffff !important;
-    border: 1px solid #ced4da !important;
-    color: #000000 !important;
-    border-radius: 15px;
-}
+/* Valeurs */
+.value-card{background:var(--light-card);border-radius:var(--radius);border:1px solid var(--light-border);transition:all .3s ease;padding:30px 20px}
+.value-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--primary)}
+.value-icon{font-size:2.5rem;color:var(--primary);display:block;margin-bottom:10px}
+.value-card h3{color:var(--light-text);font-weight:600}
+.value-card p{color:var(--light-muted);font-size:.95rem}
 
-.form-control::placeholder {
-    color: #6c757d !important;
-}
+/* Stats Bento */
+.stat-card-bento{background:var(--light-card);border-radius:var(--radius);border:1px solid var(--light-border);transition:all .3s ease;padding:30px}
+.stat-card-bento:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--primary)}
 
-.form-control:focus, .form-select:focus {
-    border-color: var(--color-accent-2);
-    box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.25);
-}
+/* ============================================================
+   CONTACT - FORMULAIRE
+   ============================================================ */
+#contact{background:var(--light-bg);padding:60px 0}
+.contact-info li{color:var(--light-text);display:flex;gap:15px;align-items:flex-start;margin-bottom:20px}
+.contact-info strong{color:var(--light-text)}
+.contact-icon{width:40px;height:40px;border-radius:50%;background:rgba(108,60,225,0.08);display:flex;align-items:center;justify-content:center;color:var(--primary);font-size:1.2rem;flex-shrink:0}
 
-/* ==================== BOUTONS MODE CLAIR ==================== */
-.btn-outline-secondary {
-    border-color: #4a4a4a;
-    color: #000000;
-}
+/* Formulaire */
+.form-control,.form-select{background:var(--light-card);border:1px solid var(--light-border);color:var(--light-text);border-radius:15px;padding:12px 15px;transition:.3s}
+.form-control::placeholder{color:var(--light-muted)}
+.form-control:focus,.form-select:focus{border-color:var(--primary);box-shadow:0 0 0 0.2rem rgba(108,60,225,0.15)}
+.form-label{color:var(--light-text);font-weight:600}
+.form-control.is-invalid{border-color:#dc3545}
+.form-control.is-valid{border-color:#198754}
+.invalid-feedback{color:#dc3545;font-size:.85rem;display:block}
+#charCount{color:var(--light-muted);font-size:.85rem}
+.map-container{overflow:hidden;border-radius:var(--radius-lg)}
+.map-container iframe{width:100%;height:400px;border:0}
 
-.btn-outline-secondary:hover {
-    background-color: var(--color-accent-2);
-    border-color: var(--color-accent-2);
-    color: white;
-}
+/* ============================================================
+   BOUTONS
+   ============================================================ */
+.btn-primary{background:var(--primary);border-color:var(--primary);color:#fff;padding:10px 25px;border-radius:var(--radius-sm);font-weight:600;transition:.3s}
+.btn-primary:hover{background:var(--primary-dark);border-color:var(--primary-dark);color:#fff;transform:translateY(-2px)}
+.btn-outline-primary{color:var(--primary);border-color:var(--primary);padding:10px 25px;border-radius:var(--radius-sm);font-weight:600;transition:.3s}
+.btn-outline-primary:hover{background:var(--primary);border-color:var(--primary);color:#fff;transform:translateY(-2px)}
+.btn-success{background:var(--secondary);border-color:var(--secondary);color:#04110c;font-weight:700;padding:10px 25px;border-radius:var(--radius-sm);transition:.3s}
+.btn-success:hover{background:#25e6a5;border-color:#25e6a5;color:#04110c;transform:translateY(-2px)}
+.btn-lg{padding:14px 35px;font-size:1.1rem}
 
-/* ==================== MISE EN PAGE GÉNÉRALE ==================== */
-main.pt-5 {
-    padding-top: calc(var(--nav-height) + 20px);
-}
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-content{background:var(--light-card);border-radius:var(--radius);border:1px solid var(--light-border)}
+.modal-header{border-bottom:1px solid var(--light-border)}
+.modal-footer{border-top:1px solid var(--light-border)}
+.modal-title{color:var(--light-text);font-weight:700}
 
-section {
-    scroll-margin-top: calc(var(--nav-height) + 15px);
-}
-
-/* ==================== MODE SOMBRE ==================== */
-body.dark-mode {
-    color: var(--color-text) !important;
-    background: radial-gradient(1100px 600px at 20% 10%, rgba(108,99,255,0.18), transparent 60%),
-                radial-gradient(900px 600px at 80% 30%, rgba(45,255,183,0.10), transparent 55%),
-                var(--color-bg) !important;
-    background-color: var(--color-bg) !important;
-}
-
-/* Titres mode sombre */
-body.dark-mode h1, body.dark-mode h2, body.dark-mode h3,
-body.dark-mode h4, body.dark-mode h5, body.dark-mode h6 {
-    color: var(--color-text) !important;
-}
-
-/* Textes mode sombre */
-body.dark-mode p, body.dark-mode span, body.dark-mode li,
-body.dark-mode label, body.dark-mode div {
-    color: var(--color-text) !important;
-}
-
-body.dark-mode .text-secondary {
-    color: var(--color-muted) !important;
-}
+/* ============================================================
+   MODE SOMBRE
+   ============================================================ */
+body.dark-mode{color:var(--text)!important;background:var(--dark)!important}
+body.dark-mode h1,body.dark-mode h2,body.dark-mode h3,body.dark-mode h4,body.dark-mode h5,body.dark-mode h6,
+body.dark-mode p,body.dark-mode span,body.dark-mode li,body.dark-mode label{color:var(--text)!important}
+body.dark-mode .text-secondary{color:var(--muted)!important}
+body.dark-mode .text-muted{color:var(--muted)!important}
+body.dark-mode .section-header h2{color:var(--text)!important}
+body.dark-mode .section-subtitle{color:var(--muted)!important}
 
 /* Cartes mode sombre */
-body.dark-mode .card,
-body.dark-mode .bento-card,
-body.dark-mode .freelancer-card {
-    background: rgba(18, 27, 46, 0.75) !important;
-    border: 1px solid var(--color-border) !important;
-}
-
-body.dark-mode .card *,
-body.dark-mode .bento-card *,
-body.dark-mode .freelancer-card * {
-    color: var(--color-text) !important;
-}
-
-body.dark-mode .display-6,
-body.dark-mode .price {
-    color: var(--color-text) !important;
-}
+body.dark-mode .card,body.dark-mode .bento-card,body.dark-mode .freelancer-card,
+body.dark-mode .pricing-card,body.dark-mode .team-card,body.dark-mode .value-card,
+body.dark-mode .stat-card,body.dark-mode .testimonial-card,body.dark-mode .stat-card-bento,
+body.dark-mode .modal-content{background:rgba(18,27,46,0.75)!important;border:1px solid var(--border)!important}
+body.dark-mode .card *,.bento-card *,.freelancer-card *,.pricing-card *{color:var(--text)!important}
+body.dark-mode .card .text-success{color:#2dffb7!important}
+body.dark-mode .card .text-danger{color:#ff6b6b!important}
+body.dark-mode .card .text-muted{color:var(--muted)!important}
 
 /* Navbar mode sombre */
-body.dark-mode #mainNavbar {
-    background: transparent !important;
-    box-shadow: none;
-}
+body.dark-mode #mainNavbar{background:rgba(11,18,32,0.95)!important;box-shadow:0 2px 20px rgba(0,0,0,0.3)}
+body.dark-mode #mainNavbar .navbar-brand,body.dark-mode #mainNavbar .nav-link{color:rgba(234,240,255,0.85)!important}
+body.dark-mode #mainNavbar .nav-link:hover{color:var(--secondary)!important}
+body.dark-mode #mainNavbar .nav-link.active{color:var(--secondary)!important;background:rgba(45,255,183,0.1)}
 
-body.dark-mode #mainNavbar .navbar-brand,
-body.dark-mode #mainNavbar .nav-link {
-    color: rgba(234, 240, 255, 0.85) !important;
-}
+/* Hero mode sombre */
+body.dark-mode #hero{background:transparent}
+body.dark-mode .hero-title{color:var(--text)!important}
+body.dark-mode .hero-subtitle{color:var(--muted)!important}
 
-body.dark-mode #mainNavbar .nav-link:hover {
-    color: var(--color-accent) !important;
-}
+/* Bento mode sombre */
+body.dark-mode #how{background:transparent}
+body.dark-mode .bento-card h3{color:var(--text)!important}
+body.dark-mode .bento-card p{color:var(--muted)!important}
+body.dark-mode .bento-step{color:rgba(45,255,183,0.15)!important}
+body.dark-mode .bento-icon{color:var(--secondary)!important}
+body.dark-mode .bento-card:hover{border-color:var(--secondary)!important}
+
+/* Catégories mode sombre */
+body.dark-mode .category-card{background:rgba(18,27,46,0.75)!important;border:1px solid var(--border)!important}
+body.dark-mode .category-card h3{color:var(--text)!important}
+body.dark-mode .category-card p{color:var(--muted)!important}
+body.dark-mode .category-icon{color:var(--secondary)}
+body.dark-mode .category-count{color:var(--muted)!important}
+
+/* Témoignages mode sombre */
+body.dark-mode #testimonials{background:transparent}
+body.dark-mode .testimonial-quote{color:var(--text)!important}
+
+/* CTA mode sombre */
+body.dark-mode .cta-banner{background:linear-gradient(135deg,rgba(108,99,255,0.3),rgba(45,255,183,0.15))}
+body.dark-mode .cta-banner h2,body.dark-mode .cta-banner p{color:var(--text)!important}
+body.dark-mode .cta-banner .btn-light{color:var(--primary)}
 
 /* Footer mode sombre */
-body.dark-mode footer {
-    background: rgba(18, 27, 46, 0.75) !important;
-    border-top-color: var(--color-border) !important;
-}
-
-body.dark-mode footer p, body.dark-mode footer a {
-    color: var(--color-text) !important;
-}
+body.dark-mode .footer{background:rgba(11,18,32,0.95)!important}
 
 /* Formulaires mode sombre */
-body.dark-mode .form-control,
-body.dark-mode .form-select {
-    background-color: rgba(108, 99, 255, 0.18) !important;
-    border: 1px solid var(--color-border) !important;
-    color: var(--color-text) !important;
-}
+body.dark-mode .form-control,body.dark-mode .form-select{background:rgba(108,99,255,0.12)!important;border:1px solid var(--border)!important;color:var(--text)!important}
+body.dark-mode .form-control::placeholder{color:var(--muted)!important}
+body.dark-mode .form-label{color:var(--text)!important}
+body.dark-mode .form-control:focus,body.dark-mode .form-select:focus{border-color:var(--secondary);box-shadow:0 0 0 0.2rem rgba(45,255,183,0.15)}
+
+/* Filtres mode sombre */
+body.dark-mode .filter-btn{background:transparent!important;border:1px solid var(--border)!important;color:var(--text)!important}
+body.dark-mode .filter-btn:hover,body.dark-mode .filter-btn.active{background:var(--secondary)!important;border-color:var(--secondary)!important;color:var(--dark)!important}
+body.dark-mode #categoryFilter{background:rgba(108,99,255,0.12)!important;border:1px solid var(--border)!important;color:var(--text)!important}
+
+/* Statistiques mode sombre */
+body.dark-mode .counter{color:var(--secondary)}
+body.dark-mode .stat-suffix{color:var(--secondary)}
+body.dark-mode .stat-number{color:var(--secondary)}
+body.dark-mode .stat-label{color:var(--muted)!important}
+body.dark-mode .stat-description{color:var(--muted)!important}
+
+/* Pricing mode sombre */
+body.dark-mode .pricing-price .price{color:var(--secondary)}
+body.dark-mode .pricing-desc{color:var(--muted)!important}
+body.dark-mode .pricing-features li{color:var(--text)!important}
+body.dark-mode .pricing-features .text-success{color:#2dffb7!important}
+body.dark-mode .pricing-features .text-danger{color:#ff6b6b!important}
+
+/* Freelances mode sombre */
+body.dark-mode .freelance-specialty{color:var(--secondary)}
+body.dark-mode .freelance-bio{color:var(--muted)!important}
+body.dark-mode .freelance-price .price{color:var(--secondary)}
+body.dark-mode .freelance-price .per-hour{color:var(--muted)!important}
+body.dark-mode .rating-number{color:var(--muted)!important}
+
+/* Accordion mode sombre */
+body.dark-mode .accordion-item{border-color:var(--border)}
+body.dark-mode .accordion-button{background:rgba(18,27,46,0.75);color:var(--text)}
+body.dark-mode .accordion-button:not(.collapsed){background:rgba(45,255,183,0.1);color:var(--secondary)}
+body.dark-mode .accordion-body{background:rgba(18,27,46,0.5);color:var(--text)}
+
+/* Page header mode sombre */
+body.dark-mode .page-header{background:transparent}
+body.dark-mode .page-header h1{color:var(--text)!important}
+body.dark-mode .page-header p{color:var(--muted)!important}
+
+/* Back to top mode sombre */
+body.dark-mode #backToTop{background:var(--secondary);color:var(--dark)}
+body.dark-mode #backToTop:hover{background:#25e6a5}
 
 /* Boutons mode sombre */
-body.dark-mode .btn-outline-secondary {
-    border-color: #f39c12;
-    color: #f39c12;
+body.dark-mode .btn-outline-primary{color:var(--secondary);border-color:var(--secondary)}
+body.dark-mode .btn-outline-primary:hover{background:var(--secondary);border-color:var(--secondary);color:var(--dark)}
+body.dark-mode .btn-primary{background:var(--secondary);border-color:var(--secondary);color:var(--dark)}
+body.dark-mode .btn-primary:hover{background:#25e6a5;border-color:#25e6a5;color:var(--dark)}
+
+/* Modal mode sombre */
+body.dark-mode .modal-header{border-bottom:1px solid var(--border)}
+body.dark-mode .modal-footer{border-top:1px solid var(--border)}
+body.dark-mode .modal-title{color:var(--text)!important}
+body.dark-mode .btn-close{filter:invert(1)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:575.98px){
+.hero-title{font-size:2rem!important}
+.hero-buttons .btn{width:100%;margin-bottom:10px}
+.bento-grid{display:block}
+.bento-card{margin-bottom:15px;grid-column:span 12!important}
+.bento-card--wide,.bento-card--tall{grid-column:span 12!important}
+.counter{font-size:1.8rem}
+.filter-btn{font-size:.75rem;padding:4px 12px}
+.pricing-popular{transform:scale(1)}
+.pricing-popular:hover{transform:translateY(-8px)}
+.team-avatar{height:160px}
+.display-5{font-size:2.1rem}
+.page-header h1{font-size:2rem}
+.section-header h2{font-size:1.8rem}
+#backToTop{width:40px;height:40px;font-size:1.2rem;bottom:20px;right:20px}
+#testimonialCarousel .carousel-control-prev,#testimonialCarousel .carousel-control-next{width:30px;height:30px}
+#testimonialCarousel .carousel-control-prev{left:-10px}
+#testimonialCarousel .carousel-control-next{right:-10px}
+.filters-wrapper{flex-direction:column;align-items:stretch}
+#categoryFilter{max-width:100%}
+.map-container iframe{height:250px}
 }
 
-/* ==================== NAVBAR SCROLL ==================== */
-.navbar-scrolled {
-    background-color: rgba(0, 0, 0, 0.95) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+@media(min-width:576px)and(max-width:991.98px){
+.hero-title{font-size:2.8rem!important}
+.bento-grid{grid-template-columns:repeat(2,1fr)}
+.bento-card{grid-column:span 1!important}
+.bento-card--wide{grid-column:span 2!important}
+.pricing-popular{transform:scale(1.02)}
+.pricing-popular:hover{transform:scale(1.02) translateY(-8px)}
+.page-header h1{font-size:2.5rem}
 }
 
-body.dark-mode .navbar-scrolled {
-    background-color: rgba(0, 0, 0, 0.95) !important;
-}
+@media(min-width:992px){.hero-title{font-size:3.8rem!important}}
+@media(min-width:1400px){.hero-title{font-size:4.5rem!important}}
 
-/* ==================== BOUTON RETOUR EN HAUT ==================== */
-#backToTop {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: var(--color-accent-2);
-    color: white;
-    border: none;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 1000;
-    cursor: pointer;
-}
-
-#backToTop:hover {
-    background-color: #5a55d4;
-    transform: scale(1.05);
-}
-
-#backToTop.show {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ==================== SECTION HERO ==================== */
-#hero h1 {
-    line-height: 1;
-    letter-spacing: -0.5px;
-}
-
-#hero img {
-    border-radius: var(--radius);
-    border: 1px solid #dee2e6;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
-}
-
-body.dark-mode #hero img {
-    border: 1px solid var(--color-border);
-}
-
-/* ==================== BENTO GRID ==================== */
-.bento-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 14px;
-}
-
-.bento-card {
-    grid-column: span 6;
-    padding: 18px;
-    border-radius: var(--radius);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.bento-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
-}
-
-.bento-step {
-    font-family: var(--font-title);
-    font-weight: 600;
-    color: rgba(45, 255, 183, 0.5);
-    margin-bottom: 6px;
-}
-
-.bento-card--wide {
-    grid-column: span 8;
-}
-
-.bento-card--tall {
-    grid-row: span 2;
-    grid-column: span 4;
-}
-
-/* ==================== CATÉGORIES ==================== */
-#categories .card {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    cursor: pointer;
-}
-
-#categories .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
-}
-
-#categories .card h3 i {
-    color: var(--color-accent);
-}
-
-/* ==================== TÉMOIGNAGES ==================== */
-#testimonials .p-4.bg-dark.border {
-    background: rgba(108, 99, 255, 0.18);
-    border-color: var(--color-border);
-    border-radius: var(--radius);
-    color: white;
-}
-
-/* ==================== BOUTONS PRIMAIRES ==================== */
-.btn-primary {
-    background-color: var(--color-accent-2);
-    border-color: var(--color-accent-2);
-}
-
-.btn-primary:hover {
-    background-color: #5a55d4;
-    border-color: #5a55d4;
-}
-
-.btn-success {
-    background-color: var(--color-accent);
-    border-color: var(--color-accent);
-    color: #04110c;
-    font-weight: 700;
-}
-
-.btn-success:hover {
-    background-color: #25e6a5;
-    border-color: #25e6a5;
-}
-/* ==================== BOUTONS DE FILTRE (PAGE FREELANCES) ==================== */
-/* Mode clair - boutons filtres */
-.filter-btn {
-    background-color: #f8f9fa !important;
-    border: 1px solid #dee2e6 !important;
-    color: #000000 !important;
-}
-
-.filter-btn:hover {
-    background-color: var(--color-accent-2) !important;
-    border-color: var(--color-accent-2) !important;
-    color: white !important;
-}
-
-/* Mode sombre - boutons filtres */
-body.dark-mode .filter-btn {
-    background-color: transparent !important;
-    border: 1px solid var(--color-border) !important;
-    color: var(--color-text) !important;
-}
-
-body.dark-mode .filter-btn:hover {
-    background-color: var(--color-accent-2) !important;
-    border-color: var(--color-accent-2) !important;
-    color: white !important;
-}
-
-/* Bouton actif (filtré) - mode clair */
-.filter-btn.active-filter {
-    background-color: var(--color-accent-2) !important;
-    border-color: var(--color-accent-2) !important;
-    color: white !important;
-}
-
-/* Bouton actif (filtré) - mode sombre */
-body.dark-mode .filter-btn.active-filter {
-    background-color: var(--color-accent-2) !important;
-    border-color: var(--color-accent-2) !important;
-    color: white !important;
-}
-
-/* ==================== IMAGES ==================== */
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-}
-
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 990px) {
-    .bento-card {
-        grid-column: span 12;
-        grid-row: auto;
-    }
-}
-
-@media (max-width: 767px) {
-    .bento-grid {
-        display: block;
-    }
-    .bento-card {
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    .card-img-top {
-        height: 180px;
-    }
-    .display-5 {
-        font-size: 2.1rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .bento-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-    }
-}
+/* ============================================================
+   ACCESSIBILITÉ
+   ============================================================ */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

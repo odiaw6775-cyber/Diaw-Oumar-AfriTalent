@@ -13,12 +13,14 @@
 </head>
 <body>
     <header>
+        <!-- ==================== NAVBAR ==================== -->
         <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar">
             <div class="container">
-                <a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil">
-                    <i class="bi bi-stars me-1"></i>AfriTalent
+                <a href="index.html" class="navbar-brand fw-bold" aria-label="Retour à l'accueil AfriTalent">
+                    <i class="bi bi-stars me-1"></i>Afri<span class="text-gradient">Talent</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Ouvrir le menu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" 
+                        aria-controls="navbarContent" aria-expanded="false" aria-label="Ouvrir le menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarContent">
@@ -26,10 +28,15 @@
                         <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
                         <li class="nav-item"><a href="freelances.html" class="nav-link">Freelances</a></li>
                         <li class="nav-item"><a href="tarifs.html" class="nav-link active">Tarifs</a></li>
-                        <li class="nav-item"><a href="about.html" class="nav-link">A propos</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link" aria-label="Page Blog">Blog</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">À propos</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link" aria-label="Page Blog (à venir)">Blog</a></li>
                         <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                        <li class="nav-item ms-lg-2"><a href="contact.html" class="btn btn-success">Rejoindre AfriTalent</a></li>
+                        <li class="nav-item ms-lg-2">
+                            <a href="contact.html" class="btn btn-success">
+                                <i class="bi bi-person-plus me-1"></i>Rejoindre AfriTalent
+                            </a>
+                        </li>
+                        <!-- Le bouton Dark Mode sera ajouté ici par JavaScript -->
                     </ul>
                 </div>
             </div>
@@ -37,52 +44,63 @@
     </header>
 
     <main class="pt-5">
-        <section class="py-5">
+        <!-- ==================== PAGE HEADER ==================== -->
+        <section class="page-header py-5">
             <div class="container py-4">
+                <span class="section-tag">Tarifs</span>
                 <h1 class="fw-bold">Plans et Tarifications</h1>
-                <p class="mb-0">Choisissez un plan adapté à votre niveau. Passez à Pro pour accélérer votre recherche de missions et de talents.</p>
+                <p class="section-subtitle">Choisissez un plan adapté à votre niveau. Passez à Pro pour accélérer votre recherche de missions et de talents.</p>
             </div>
         </section>
 
-        <section class="pb-5" aria-label="Plans Tarifaires">
+        <!-- ==================== PLANS TARIFAIRES ==================== -->
+        <section class="pricing-section pb-5" aria-label="Plans Tarifaires">
             <div class="container">
-                <div class="row g-3 align-items-stretch">
+                <div class="row g-4 align-items-stretch">
                     
                     <!-- Plan Gratuit -->
                     <div class="col-12 col-md-6 col-lg-4">
-                        <article class="card h-100">
-                            <div class="card-body">
-                                <h2 class="h5 card-title">Gratuit</h2>
-                                <p>Pour découvrir la plateforme</p>
-                                <p class="display-6 fw-bold mb-0">0 FCFA</p>
-                                <p class="mb-4">/mois</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Création de profil</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accès au catalogue</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Candidatures limitées</li>
-                                    <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i>Boost de visibilité</li>
-                                    <li class="mb-2"><i class="bi bi-x-circle text-danger me-2"></i>Support prioritaire</li>
+                        <article class="card pricing-card h-100">
+                            <div class="card-body text-center">
+                                <div class="pricing-icon"><i class="bi bi-gift"></i></div>
+                                <h2 class="h4 pricing-plan">Gratuit</h2>
+                                <p class="pricing-desc">Pour découvrir la plateforme</p>
+                                <div class="pricing-price">
+                                    <span class="price">0</span>
+                                    <span class="currency">FCFA</span>
+                                    <span class="period">/mois</span>
+                                </div>
+                                <ul class="pricing-features list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success"></i>Création de profil</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Accès au catalogue</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Candidatures limitées</li>
+                                    <li><i class="bi bi-x-circle text-danger"></i>Boost de visibilité</li>
+                                    <li><i class="bi bi-x-circle text-danger"></i>Support prioritaire</li>
                                 </ul>
-                                <a href="contact.html" class="btn btn-primary w-100">Commencer</a>
+                                <a href="contact.html" class="btn btn-outline-primary w-100">Commencer</a>
                             </div>
                         </article>
                     </div>
 
-                    <!-- Plan Pro -->
+                    <!-- Plan Pro (Recommandé) -->
                     <div class="col-12 col-md-6 col-lg-4">
-                        <article class="card h-100 border border-2 border-primary position-relative">
-                            <span class="badge bg-primary position-absolute top-0 start-50 translate-middle px-3 py-2">Populaire</span>
-                            <div class="card-body">
-                                <h2 class="h5 card-title">Pro</h2>
-                                <p>Pour aller plus vite</p>
-                                <p class="display-6 fw-bold mb-0">9 900 FCFA</p>
-                                <p class="mb-4">/ mois</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Profil mis en avant</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accès complet au catalogue</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Candidatures illimitées</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Boost de visibilité</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Support prioritaire</li>
+                        <article class="card pricing-card pricing-popular h-100">
+                            <span class="pricing-badge">⭐ Populaire</span>
+                            <div class="card-body text-center">
+                                <div class="pricing-icon"><i class="bi bi-rocket"></i></div>
+                                <h2 class="h4 pricing-plan">Pro</h2>
+                                <p class="pricing-desc">Pour aller plus vite</p>
+                                <div class="pricing-price">
+                                    <span class="price">9 900</span>
+                                    <span class="currency">FCFA</span>
+                                    <span class="period">/mois</span>
+                                </div>
+                                <ul class="pricing-features list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success"></i>Profil mis en avant</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Accès complet au catalogue</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Candidatures illimitées</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Boost de visibilité</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Support prioritaire</li>
                                 </ul>
                                 <a href="contact.html" class="btn btn-primary w-100">Choisir Pro</a>
                             </div>
@@ -91,20 +109,24 @@
 
                     <!-- Plan Entreprise -->
                     <div class="col-12 col-md-6 col-lg-4">
-                        <article class="card h-100">
-                            <div class="card-body">
-                                <h2 class="h5 card-title">Entreprise</h2>
-                                <p>Pour équipes et recrutement</p>
-                                <p class="display-6 fw-bold mb-0">29 900 FCFA</p>
-                                <p class="mb-4">/ mois</p>
-                                <ul class="list-unstyled mb-4">
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accès multi-utilisateurs</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Matching avancé</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Gestion de projets & missions</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Facturation centralisée</li>
-                                    <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>Accompagnement dédié</li>
+                        <article class="card pricing-card h-100">
+                            <div class="card-body text-center">
+                                <div class="pricing-icon"><i class="bi bi-building"></i></div>
+                                <h2 class="h4 pricing-plan">Entreprise</h2>
+                                <p class="pricing-desc">Pour équipes et recrutement</p>
+                                <div class="pricing-price">
+                                    <span class="price">29 900</span>
+                                    <span class="currency">FCFA</span>
+                                    <span class="period">/mois</span>
+                                </div>
+                                <ul class="pricing-features list-unstyled">
+                                    <li><i class="bi bi-check-circle text-success"></i>Accès multi-utilisateurs</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Matching avancé</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Gestion de projets & missions</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Facturation centralisée</li>
+                                    <li><i class="bi bi-check-circle text-success"></i>Accompagnement dédié</li>
                                 </ul>
-                                <a href="contact.html" class="btn btn-primary w-100">Contacter l'équipe</a>
+                                <a href="contact.html" class="btn btn-outline-primary w-100">Contacter l'équipe</a>
                             </div>
                         </article>
                     </div>
@@ -112,59 +134,85 @@
             </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="pb-5" aria-label="Foire aux questions">
+        <!-- ==================== FAQ (ACCORDION) ==================== -->
+        <section class="faq-section pb-5" aria-label="Foire aux questions">
             <div class="container">
-                <h2 class="fw-bold mb-4">FAQ</h2>
-                <div class="accordion" id="faqAccordion">
+                <div class="section-header text-center">
+                    <span class="section-tag">Questions</span>
+                    <h2 class="fw-bold">Foire aux questions</h2>
+                    <p class="section-subtitle">Tout ce que vous devez savoir sur AfriTalent</p>
+                </div>
+                <div class="accordion mt-4" id="faqAccordion">
                     <div class="accordion-item">
-                        <h3 class="accordion-header" id="q1">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="false">
-                                Est-ce que AfriTalent est une vraie plateforme ?
+                        <h3 class="accordion-header" id="faq1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer1" 
+                                    aria-expanded="false" aria-controls="answer1">
+                                <i class="bi bi-question-circle me-2"></i>Qu'est-ce qu'AfriTalent ?
                             </button>
                         </h3>
-                        <div id="a1" class="accordion-collapse collapse" aria-labelledby="q1" data-bs-parent="#faqAccordion" role="region">
-                            <div class="accordion-body">Non, c'est un projet pédagogique pour un examen.</div>
+                        <div id="answer1" class="accordion-collapse collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                AfriTalent est une plateforme de mise en relation entre freelances tech et entreprises en Afrique. 
+                                Ce projet est réalisé dans le cadre d'un examen pédagogique.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h3 class="accordion-header" id="q2">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false">
-                                Quel plan choisir si je suis un freelance débutant ?
+                        <h3 class="accordion-header" id="faq2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer2" 
+                                    aria-expanded="false" aria-controls="answer2">
+                                <i class="bi bi-question-circle me-2"></i>Quel plan choisir si je suis un freelance débutant ?
                             </button>
                         </h3>
-                        <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAccordion" role="region">
-                            <div class="accordion-body">Le plan Gratuit suffit pour débuter. Le plan Pro devient utile pour plus de visibilité.</div>
+                        <div id="answer2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Le plan <strong>Gratuit</strong> suffit pour débuter. Il vous permet de créer votre profil et de postuler à des missions. 
+                                Le plan <strong>Pro</strong> devient utile pour plus de visibilité et des candidatures illimitées.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h3 class="accordion-header" id="q3">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false">
-                                Le paiement est-il sécurisé ?
+                        <h3 class="accordion-header" id="faq3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer3" 
+                                    aria-expanded="false" aria-controls="answer3">
+                                <i class="bi bi-question-circle me-2"></i>Le paiement est-il sécurisé ?
                             </button>
                         </h3>
-                        <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAccordion" role="region">
-                            <div class="accordion-body">Dans ce projet, il n'y a pas de paiement réel. C'est un site vitrine.</div>
+                        <div id="answer3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Dans le cadre de ce projet pédagogique, il n'y a pas de paiement réel. C'est un site vitrine démonstratif. 
+                                En version réelle, les paiements seraient sécurisés via des partenaires bancaires.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h3 class="accordion-header" id="q4">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="false">
-                                Puis-je changer de plan à tout moment ?
+                        <h3 class="accordion-header" id="faq4">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer4" 
+                                    aria-expanded="false" aria-controls="answer4">
+                                <i class="bi bi-question-circle me-2"></i>Puis-je changer de plan à tout moment ?
                             </button>
                         </h3>
-                        <div id="a4" class="accordion-collapse collapse" aria-labelledby="q4" data-bs-parent="#faqAccordion" role="region">
-                            <div class="accordion-body">Oui, c'est le principe d'un abonnement.</div>
+                        <div id="answer4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Oui, c'est le principe d'un abonnement flexible. Vous pouvez passer d'un plan à l'autre à tout moment 
+                                depuis votre tableau de bord.
+                            </div>
                         </div>
                     </div>
                     <div class="accordion-item">
-                        <h3 class="accordion-header" id="q5">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5" aria-expanded="false">
-                                Comment sont vérifiées les freelances ?
+                        <h3 class="accordion-header" id="faq5">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answer5" 
+                                    aria-expanded="false" aria-controls="answer5">
+                                <i class="bi bi-question-circle me-2"></i>Comment sont vérifiées les freelances ?
                             </button>
                         </h3>
-                        <div id="a5" class="accordion-collapse collapse" aria-labelledby="q5" data-bs-parent="#faqAccordion" role="region">
-                            <div class="accordion-body">Processus fictif : portfolio, entretien rapide, validation des compétences.</div>
+                        <div id="answer5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Processus fictif de vérification :<br>
+                                <i class="bi bi-check-circle text-success"></i> Portfolio et expérience vérifiés<br>
+                                <i class="bi bi-check-circle text-success"></i> Entretien rapide avec l'équipe<br>
+                                <i class="bi bi-check-circle text-success"></i> Validation des compétences techniques
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -172,40 +220,51 @@
         </section>
     </main>
 
-    <footer class="py-5 border-top">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="py-5 border-top footer">
         <div class="container">
             <div class="row g-4">
                 <div class="col-12 col-lg-4">
-                    <p class="fw-bold mb-2"><i class="bi bi-stars me-1"></i>AfriTalent</p>
-                    <p>Plateforme fictive de mise en relation entre freelances tech et entreprises.</p>
+                    <p class="fw-bold mb-2 footer-brand"><i class="bi bi-stars me-1"></i>Afri<span>Talent</span></p>
+                    <p class="footer-description">Plateforme fictive de mise en relation entre freelances tech et entreprises en Afrique.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <p class="fw-semibold mb-2">Liens utiles</p>
-                    <ul class="list-unstyled mb-0">
+                    <h5 class="fw-semibold mb-2">Liens utiles</h5>
+                    <ul class="list-unstyled mb-0 footer-links">
                         <li><a href="freelances.html">Freelances</a></li>
-                        <li><a href="about.html">A propos</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="about.html">À propos</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <p class="fw-semibold mb-2">Ressources</p>
-                    <ul class="list-unstyled mb-0">
+                    <h5 class="fw-semibold mb-2">Ressources</h5>
+                    <ul class="list-unstyled mb-0 footer-links">
                         <li><a href="#">Blog</a></li>
-                        <li><a href="contact.html">Support</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                        <li><a href="#">Politique de confidentialité</a></li>
                     </ul>
                 </div>
-                <div class="col-12 col-lg-3">
-                    <p class="fw-semibold mb-2">Contact</p>
-                    <p>contact@afritalent.africa</p>
-                    <div class="d-flex gap-2">
-                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="X"><i class="bi bi-x"></i></a>
-                        <a href="#" class="btn btn-outline-secondary btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    </div>
+                <div class="col-12 col-lg-2">
+                    <h5 class="fw-semibold mb-2">Contact</h5>
+                    <ul class="list-unstyled footer-contact">
+                        <li><i class="bi bi-envelope"></i> contact@afritalent.com</li>
+                        <li><i class="bi bi-telephone"></i> +221 77 123 45 67</li>
+                        <li><i class="bi bi-geo-alt"></i> Dakar, Sénégal</li>
+                    </ul>
                 </div>
             </div>
             <div class="text-center mt-4 pt-3 border-top">
-                <p class="mb-0">&copy; <span id="year">2026</span> AfriTalent. Tous droits réservés.</p>
+                <p class="mb-0 footer-copyright">
+                    &copy; <span id="currentYear">2026</span> AfriTalent. Tous droits réservés.
+                </p>
             </div>
         </div>
     </footer>
